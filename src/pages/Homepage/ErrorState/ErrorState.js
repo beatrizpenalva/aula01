@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import Button from '../../atoms/Button'
 import FeedbackWrapper from '../../templates/FeedbackWrapper'
+import './ErrorState.styles.css'
 
 const ErrorState = ({ onTryAgain }) => (
     <FeedbackWrapper>
