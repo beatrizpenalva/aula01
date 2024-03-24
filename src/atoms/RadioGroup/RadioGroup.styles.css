@@ -1,0 +1,13 @@
+.radio-group-container {
+    display: flex;
+    gap: 8px;
+    border-color: transparent;
+}
+
+.radio-group-container legend {
+    margin-bottom: 8px;
+}
+
+fieldset {
+    margin-bottom: 24px;
+}
