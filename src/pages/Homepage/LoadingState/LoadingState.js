@@ -1,4 +1,4 @@
-import CardSkeleton from '../../molecules/CardProduct/CardSkeleton'
+import CardSkeleton from '../../../molecules/CardProduct/CardSkeleton'
 import './LoadingState.styles.css'
 
 const LoadingState = () => (

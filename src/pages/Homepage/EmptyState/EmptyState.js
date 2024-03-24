@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import FeedbackWrapper from '../../templates/FeedbackWrapper'
+import FeedbackWrapper from '../../../templates/FeedbackWrapper'
 
 const EmptyState = ({ product }) => (
     <FeedbackWrapper>

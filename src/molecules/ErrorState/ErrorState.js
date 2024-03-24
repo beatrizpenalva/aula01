@@ -15,3 +15,5 @@ ErrorState.propTypes = {
     description: PropTypes.string.isRequired,
     onTryAgain: PropTypes.func.isRequired,
 }
+
+export default ErrorState

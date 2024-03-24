@@ -1,4 +1,4 @@
-import FeedbackWrapper from '../../templates/FeedbackWrapper'
+import FeedbackWrapper from '../../../templates/FeedbackWrapper'
 
 const InitialState = () => (
     <FeedbackWrapper>

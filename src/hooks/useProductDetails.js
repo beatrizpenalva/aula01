@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import service from '../service'
+import api from '../api'
 
 const useProductDetails = ({ productId }) => {
     const [details, setDetails] = useState({})
@@ -9,7 +9,7 @@ const useProductDetails = ({ productId }) => {
     const getProductDetails = async () => {
         setIsLoading(true)
         try {
-            const result = await service.getProductDetails({ productId })
+            const result = await api.getProductDetails({ productId })
             setDetails(result)
         } catch {
             setIsError(true)

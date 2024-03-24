@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
-import CardProduct from '../../molecules/CardProduct'
+import CardProduct from '../../../molecules/CardProduct'
 import './SearchResultList.styles.css'
-import { ROUTES } from '../../utils/constants'
+import { ROUTES } from '../../../utils/constants'
 
 const { PRODUCT_DETAILS } = ROUTES
 
