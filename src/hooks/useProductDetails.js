@@ -21,7 +21,7 @@ const useProductDetails = ({ productId }) => {
     return {
         details,
         getProductDetails,
-        isError,
+        isError: isError || !Object.keys(details).length,
         isLoading,
     }
 }
