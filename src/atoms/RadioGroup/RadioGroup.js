@@ -13,7 +13,7 @@ const RadioGroup = ({ children, label }) => (
 
 RadioGroup.propTypes = {
     children: PropTypes.node.isRequired,
-    label: PropTypes.string,
+    label: PropTypes.oneOf([PropTypes.element, PropTypes.string]),
 }
 
 RadioGroup.defaultProps = {
