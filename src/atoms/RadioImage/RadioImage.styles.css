@@ -1,0 +1,23 @@
+.product-image-sm~input {
+    display: none;
+}
+
+label>.product-image-sm {
+    cursor: pointer;
+}
+
+.product-image-sm {
+    border-color: #e0e2e5;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    padding: 4px;
+    margin-right: 32px;
+    width: 120px;
+}
+
+.product-image-sm:hover,
+.product-image-sm-checked {
+    border-color: #0d3b66;
+    border-width: 2px;
+}
