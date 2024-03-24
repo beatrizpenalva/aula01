@@ -3,7 +3,7 @@ import InfoRow from '../../atoms/InfoRow'
 import './ProductAttributesList.styles.css'
 
 const ProductAttributesList = ({ attributes }) => (
-    <div className='attributes-container'>
+    <section className='attributes-container'>
         {attributes.map(({ id, name, value_name }, index) => {
             const isEven = index % 2 === 0
 
@@ -11,7 +11,7 @@ const ProductAttributesList = ({ attributes }) => (
                 <InfoRow key={id} label={name} value={value_name} colored={isEven} />
             )
         })}
-    </div>
+    </section>
 )
 
 ProductAttributesList.propTypes = {
