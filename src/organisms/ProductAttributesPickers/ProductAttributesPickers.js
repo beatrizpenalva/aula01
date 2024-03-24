@@ -1,14 +1,21 @@
 import PropTypes from 'prop-types'
 import Radio from '../../atoms/Radio'
 import RadioGroup from '../../atoms/RadioGroup'
+import './ProductAttributesPickers.styles.css'
 
-const ProductAttributesPickers = ({ checkedPickers, onChange, pickers }) => (
-    <div>
+const ProductAttributesPickers = ({ checkedPickers, onChange, pickers, productName }) => (
+    <section>
+        <h2>Produto:</h2>
+        <h3 className='section-title'>{productName}</h3>
         {pickers.map(({ picker_id, picker_name, products }) => {
+            const checkedOptionOnPicker = checkedPickers.find(({ category }) => category === picker_name)
+            const pickerGroupValue = checkedOptionOnPicker?.value
+            const pickerGroupTitle = pickerGroupValue ? (<p>{picker_name}: <b>{pickerGroupValue}</b></p>) : picker_name
+
             return (
-                <RadioGroup key={picker_id} label={picker_name}>
+                <RadioGroup key={picker_id} label={pickerGroupTitle}>
                     {products.map(({ picker_label, product_id }) => {
-                        const isChecked = checkedPickers.find(({ category }) => category === picker_name)?.value === picker_label
+                        const isChecked = pickerGroupValue === picker_label
 
                         return (
                             <Radio
@@ -25,7 +32,7 @@ const ProductAttributesPickers = ({ checkedPickers, onChange, pickers }) => (
                 </RadioGroup>
             )
         })}
-    </div>
+    </section>
 )
 
 ProductAttributesPickers.propTypes = {
@@ -42,6 +49,7 @@ ProductAttributesPickers.propTypes = {
             product_id: PropTypes.string.isRequired,
         })).isRequired,
     })).isRequired,
+    productName: PropTypes.string.isRequired,
 }
 
 ProductAttributesPickers.defautProps = {
