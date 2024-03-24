@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import api from '../api'
 
-const useSearchProducts = () => {
+const useSearchProducts = ({ product }) => {
     const [productsList, setProductsList] = useState([])
     const [isError, setIsError] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
 
-    const getProductsAvailable = async ({ product }) => {
+    const isEmpty = !productsList.length && Boolean(product)
+
+    const getProductsAvailable = async () => {
         setIsLoading(true)
         try {
             const { results } = await api.searchProducts({ product })
@@ -21,10 +23,12 @@ const useSearchProducts = () => {
 
     return {
         getProductsAvailable,
-        isEmpty: !productsList.length,
+        isEmpty,
         isError,
         isLoading,
         productsList,
+        renderContent: !isError && !isEmpty,
+        renderInitialState: isEmpty && !Boolean(product),
     }
 }
 
