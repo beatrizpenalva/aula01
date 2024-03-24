@@ -11,6 +11,7 @@
     border-style: solid;
     border-radius: 4px;
     padding: 16px;
+    flex: 2;
 }
 
 .product-content-container {
@@ -21,11 +22,11 @@
 
 .product-info-container {
     display: flex;
-    padding: 32px;
+    padding: 24px;
     background-color: white;
     margin: 24px 0px;
     border-radius: 4px;
-    gap: 32px;
+    gap: 24px;
 }
 
 .subsection-title {

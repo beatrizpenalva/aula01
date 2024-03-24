@@ -1,3 +1,7 @@
+.product-attributes-pickers-container {
+    flex: 3;
+}
+
 .section-title {
     margin-bottom: 24px;
 }

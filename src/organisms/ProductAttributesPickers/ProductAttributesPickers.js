@@ -4,7 +4,7 @@ import RadioGroup from '../../atoms/RadioGroup'
 import './ProductAttributesPickers.styles.css'
 
 const ProductAttributesPickers = ({ checkedPickers, onChange, pickers, productName }) => (
-    <section>
+    <section className='product-attributes-pickers-container'>
         <h2>Produto:</h2>
         <h3 className='section-title'>{productName}</h3>
         {pickers.map(({ picker_id, picker_name, products }) => {

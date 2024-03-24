@@ -12,8 +12,7 @@ label>.radio-image {
     border-width: 1px;
     border-radius: 2px;
     padding: 4px;
-    margin-right: 32px;
-    width: 120px;
+    width: 48px;
 }
 
 .radio-image:hover,

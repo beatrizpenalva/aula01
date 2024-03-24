@@ -1,7 +1,9 @@
 .product-image {
     height: 320px;
+    margin-left: 16px;
 }
 
 .product-images-section {
     display: flex;
+    flex: 3;
 }
