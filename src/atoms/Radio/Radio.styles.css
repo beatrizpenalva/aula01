@@ -1,0 +1,29 @@
+.radio-input-container input {
+    display: none;
+}
+
+.radio-input-container label {
+    cursor: pointer;
+}
+
+.radio-input-container {
+    display: flex;
+    align-items: center;
+    border-color: #0d3b66;
+    color: #0d3b66;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-width: 2px;
+    border-style: solid;
+
+}
+
+.radio-input-container:hover {
+    background-color: #0d3b664d;
+}
+
+.radio-checked {
+    background-color: #0d3b66;
+    color: white;
+}
