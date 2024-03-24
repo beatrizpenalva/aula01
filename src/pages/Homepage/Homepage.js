@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import EmptyState from './EmptyState'
 import ErrorState from '../../molecules/ErrorState'
 import Header from '../../molecules/Header'
@@ -10,7 +11,10 @@ import useSearchProducts from '../../hooks/useSearchProducts'
 const ERROR_DESCRIPTION = 'Não conseguimos efetuar a busca. Por favor, tente novamente.'
 
 const Homepage = () => {
-    const [product, setProduct] = useState('')
+    const location = useLocation()
+    const { state: { search } } = location
+
+    const [product, setProduct] = useState(search ?? '')
 
     const {
         getProductsAvailable,
@@ -26,6 +30,10 @@ const Homepage = () => {
         setProduct(value)
         getProductsAvailable()
     }
+
+    useEffect(() => {
+        getProductsAvailable()
+    }, [product])
 
     return (
         <>
