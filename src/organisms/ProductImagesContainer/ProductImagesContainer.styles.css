@@ -1,0 +1,7 @@
+.product-image {
+    height: 320px;
+}
+
+.product-images-section {
+    display: flex;
+}
