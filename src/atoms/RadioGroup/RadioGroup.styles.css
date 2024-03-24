@@ -1,11 +1,19 @@
 .radio-group-container {
+    border-color: transparent;
     display: flex;
     gap: 8px;
-    border-color: transparent;
 }
 
 .radio-group-container legend {
     margin-bottom: 8px;
+}
+
+.radio-group-horizontal {
+    flex-direction: row;
+}
+
+.radio-group-vertical {
+    flex-direction: column;
 }
 
 fieldset {
