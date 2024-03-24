@@ -3,14 +3,14 @@ import './InfoRow.styles.css'
 
 const InfoRow = ({ colored, label, value }) => (
     <>
-        {!Boolean(value) ? null : (<>
-            <div className={`row${colored ? ' colored' : ''}`}>
-                <p>{label}</p>
-                <p>{value}</p>
-            </div>
-            <hr aria-hidden />
-
-        </>)}
+        {!Boolean(value) ? null : (
+            <>
+                <div className={`row${colored ? ' colored' : ''}`}>
+                    <p>{label}</p>
+                    <p>{value}</p>
+                </div>
+            </>
+        )}
     </>
 )
 
