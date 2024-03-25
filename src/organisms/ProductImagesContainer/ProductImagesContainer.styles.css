@@ -7,3 +7,10 @@
     display: flex;
     flex: 3;
 }
+
+.product-images-skeleton-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 44px;
+}
