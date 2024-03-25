@@ -19,3 +19,7 @@ h5,
 h6 {
     color: #42474c;
 }
+
+ul {
+    list-style: none;
+}
