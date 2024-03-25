@@ -7,7 +7,7 @@ const CardProduct = ({ onClick, product }) => {
     const hasPictures = pictures.length
 
     return (
-        <div type="button" onClick={onClick} className="card-container">
+        <div type="button" onClick={onClick} className="card-container" aria-label={`Ver detalhes de ${name}`}>
             {hasPictures ? (
                 <div className='card-image-wrapper' data-testid='card-image'>
                     <img src={product.pictures[0].url} aria-hidden className="card-image" />
