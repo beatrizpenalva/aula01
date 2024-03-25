@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import RadioGroup from '../../atoms/RadioGroup'
 import RadioImage from '../../atoms/RadioImage'
 import Skeleton from '../../atoms/Skeleton'
@@ -17,7 +17,11 @@ const LoadingState = () => (
 )
 
 const ProductImagesContainer = ({ isLoading, pictures }) => {
-    const [mainPicture, setMainPicture] = useState(pictures[0].url)
+    const [mainPicture, setMainPicture] = useState('')
+
+    useEffect(() => {
+        setMainPicture(pictures[0].url)
+    }, [pictures])
 
     return (
         <section className='product-images-section' aria-hidden>
@@ -52,9 +56,7 @@ ProductImagesContainer.propTypes = {
 
 ProductImagesContainer.defaultProps = {
     isLoading: false,
-    pictures: [{
-        url: '',
-    }],
+    pictures: [],
 }
 
 export default ProductImagesContainer
