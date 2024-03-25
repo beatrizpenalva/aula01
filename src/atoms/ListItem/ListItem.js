@@ -1,15 +1,20 @@
 import PropTypes from 'prop-types'
 import './ListItem.styles.css'
 
-const ListItem = ({ children }) => (
+const ListItem = ({ children, showMarker }) => (
     <li>
-        <span className='marker' />
+        {showMarker && <span className='marker' />}
         {children}
     </li>
 )
 
 ListItem.propTypes = {
     children: PropTypes.oneOf([PropTypes.element, PropTypes.string]).isRequired,
+    showMarker: PropTypes.bool,
+}
+
+ListItem.defaultProps = {
+    showMarker: false,
 }
 
 export default ListItem
