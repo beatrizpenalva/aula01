@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import EmptyState from './EmptyState'
 import ErrorState from '../../molecules/ErrorState'
 import Header from '../../molecules/Header'
-import InitialState from './InitialState'
-import LoadingState from './LoadingState'
-import SearchResultList from './SearchResultList'
+import HomeEmptyState from '../../molecules/HomeEmptyState'
+import HomeInitialState from '../../molecules/HomeInitialState'
+import HomeLoadingState from '../../molecules/HomeLoadingState'
+import HomeSearchResultList from '../../organisms/HomeSearchResultList'
 import useSearchProducts from '../../hooks/useSearchProducts'
 
 const ERROR_DESCRIPTION = 'Não conseguimos efetuar a busca. Por favor, tente novamente.'
@@ -38,12 +38,12 @@ const Homepage = () => {
     return (
         <>
             <Header onSearch={handleSubmitProduct} />
-            {isLoading ? (<LoadingState />) : (
+            {isLoading ? (<HomeLoadingState />) : (
                 <>
                     {isError && (<ErrorState description={ERROR_DESCRIPTION} onTryAgain={getProductsAvailable} />)}
-                    {renderInitialState && (<InitialState />)}
-                    {isEmpty && (<EmptyState product={product} />)}
-                    {renderContent && (<SearchResultList product={product} productsList={productsList} />)}
+                    {renderInitialState && (<HomeInitialState />)}
+                    {isEmpty && (<HomeEmptyState product={product} />)}
+                    {renderContent && (<HomeSearchResultList product={product} productsList={productsList} />)}
                 </>
             )}
         </>

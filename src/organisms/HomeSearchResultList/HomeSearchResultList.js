@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom'
-import CardProduct from '../../../molecules/CardProduct'
-import './SearchResultList.styles.css'
-import { ROUTES } from '../../../utils/constants'
+import CardProduct from '../../molecules/CardProduct'
+import './HomeSearchResultList.styles.css'
+import { ROUTES } from '../../utils/constants'
 
 const { PRODUCT } = ROUTES
 
-const SearchResultList = ({ product, productsList }) => {
+const HomeSearchResultList = ({ product, productsList }) => {
     const navigate = useNavigate()
 
     const handleViewProductDetails = ({ productId }) => {
@@ -23,4 +23,4 @@ const SearchResultList = ({ product, productsList }) => {
 }
 
 
-export default SearchResultList
+export default HomeSearchResultList
