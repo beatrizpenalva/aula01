@@ -23,7 +23,7 @@
 .product-content-container {
     display: flex;
     flex-direction: column;
-    padding: 40px 144px;
+    padding: 40px 5vw;
 }
 
 .product-info-container {
