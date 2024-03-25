@@ -3,13 +3,13 @@ import CardProduct from '../../../molecules/CardProduct'
 import './SearchResultList.styles.css'
 import { ROUTES } from '../../../utils/constants'
 
-const { PRODUCT_DETAILS } = ROUTES
+const { PRODUCT } = ROUTES
 
 const SearchResultList = ({ product, productsList }) => {
     const navigate = useNavigate()
 
     const handleViewProductDetails = ({ productId }) => {
-        navigate(PRODUCT_DETAILS, { state: { productId } })
+        navigate(PRODUCT, { state: { productId } })
     }
 
     return (

@@ -56,7 +56,7 @@ export default {
             "picker_name": "Capacidad",
             "products": [
                 {
-                    "product_id": "MLA14719808",
+                    "product_id": "MLA147198089",
                     "picker_label": "32 GB",
                     "picture_id": "",
                     "thumbnail": "",

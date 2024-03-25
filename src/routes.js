@@ -2,10 +2,10 @@ import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import Homepage from './pages/Homepage'
 import PageNotFound from './pages/PageNotFound'
-import ProductDetails from './pages/ProductDetails'
+import Product from './pages/Product'
 import { ROUTES } from './utils/constants'
 
-const { HOME, PRODUCT_DETAILS } = ROUTES
+const { HOME, PRODUCT } = ROUTES
 
 const router = createBrowserRouter(
   [
@@ -14,8 +14,8 @@ const router = createBrowserRouter(
       element: <Homepage />,
     },
     {
-      path: PRODUCT_DETAILS,
-      element: <ProductDetails />
+      path: PRODUCT,
+      element: <Product />
     },
     {
       path: '*',
