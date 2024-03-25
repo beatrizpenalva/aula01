@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import ErrorState from '../../molecules/ErrorState'
 import Header from '../../molecules/Header'
 import ProductDetails from '../../organisms/ProductDetails'
@@ -11,9 +11,8 @@ const { HOME } = ROUTES
 const ERROR_DESCRIPTION = 'Não conseguimos exibir informações sobre o produto. Por favor, tente novamente.'
 
 const Product = () => {
-    const location = useLocation()
     const navigate = useNavigate()
-    const { state: { productId } } = location
+    const { productId } = useParams()
     const { details, getProductDetails, isError, isLoading } = useProductDetails({ productId })
 
     const handleSearch = value => {

@@ -1,4 +1,6 @@
 export const ROUTES = {
     HOME: "/",
-    PRODUCT: '/details',
+    PRODUCT: '/details/:productId',
 }
+
+export const getProductDetailsUrl = id => `/details/${id}`
