@@ -10,7 +10,7 @@ import useSearchProducts from '../../hooks/useSearchProducts'
 
 const ERROR_DESCRIPTION = 'Não conseguimos efetuar a busca. Por favor, tente novamente.'
 
-const Homepage = () => {
+const Home = () => {
     const location = useLocation()
     const { state: { search } } = location
 
@@ -50,4 +50,4 @@ const Homepage = () => {
     )
 }
 
-export default Homepage
+export default Home

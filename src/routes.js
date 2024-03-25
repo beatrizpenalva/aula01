@@ -1,6 +1,6 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import Homepage from './pages/Homepage'
+import Home from './pages/Home'
 import PageNotFound from './pages/PageNotFound'
 import Product from './pages/Product'
 import { ROUTES } from './utils/constants'
@@ -11,7 +11,7 @@ const router = createBrowserRouter(
   [
     {
       path: HOME,
-      element: <Homepage />,
+      element: <Home />,
     },
     {
       path: PRODUCT,
