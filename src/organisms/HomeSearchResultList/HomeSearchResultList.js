@@ -13,7 +13,7 @@ const HomeSearchResultList = ({ product, productsList }) => {
 
     return (
         <main className="list-products-container">
-            <h2>Resultado da busca para: {product}</h2>
+            <h2 className='subsection-title'>Resultado da busca para: {product}</h2>
             {productsList.map((item, index) => (
                 <CardProduct key={`${index}-${item.id}`} onClick={() => handleViewProductDetails({ productId: item.id })} product={item} />
             ))}
