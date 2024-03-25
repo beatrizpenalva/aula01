@@ -6,11 +6,11 @@ import './ProductAttributesPickers.styles.css'
 
 const LoadingState = () => (
     <section className='product-attributes-pickers-container'>
-        <Skeleton height='48px' styles={{ 'margin-bottom': '12px' }} />
-        <Skeleton height='32px' styles={{ 'margin-bottom': '24px' }} />
+        <Skeleton height='48px' styles={{ marginBottom: '12px' }} />
+        <Skeleton height='32px' styles={{ marginBottom: '24px' }} />
         {[1, 2, 3].map((item) => {
             return (
-                <div className='product-picker-skeleton-container'>
+                <div key={item} className='product-picker-skeleton-container'>
                     <Skeleton height='24px' />
                     <div className='product-picker-skeleton'>
                         <Skeleton height='32px' />
@@ -73,13 +73,15 @@ ProductAttributesPickers.propTypes = {
             picker_label: PropTypes.string.isRequired,
             product_id: PropTypes.string.isRequired,
         })).isRequired,
-    })).isRequired,
-    productName: PropTypes.string.isRequired,
+    })),
+    productName: PropTypes.string,
 }
 
 ProductAttributesPickers.defautProps = {
     checkedPickers: [],
     isLoading: false,
+    pickers: [],
+    productName: '',
 }
 
 export default ProductAttributesPickers
