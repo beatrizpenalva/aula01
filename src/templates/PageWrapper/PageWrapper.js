@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useNavigate } from 'react-router-dom'
 import Header from '../../molecules/Header'
-import { getSearchResultUrl } from '../../utils/constants'
+import { getSearchResultUrl } from '../../utils/helpers'
 
 const PageWrapper = ({ children }) => {
     const navigate = useNavigate()
