@@ -18,6 +18,7 @@ const ProductAttributesList = ({ attributes, isLoading }) => (
             :
             (
                 <>
+                    <h6 className='subsection-title'>Ficha técnica:</h6>
                     {attributes.map(({ id, name, value_name }, index) => {
                         const isEven = index % 2 === 0
 

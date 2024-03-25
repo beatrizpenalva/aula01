@@ -10,3 +10,7 @@
     flex-direction: column;
     gap: 16px;
 }
+
+.subsection-title {
+    margin-bottom: 16px;
+}
