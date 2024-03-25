@@ -5,7 +5,7 @@ const InfoRow = ({ colored, label, value }) => (
     <>
         {!Boolean(value) ? null : (
             <>
-                <div className={`row${colored ? ' colored' : ''}`}>
+                <div className={`row${colored ? ' colored' : ''}`} data-testid='info-row'>
                     <p><b>{label}</b></p>
                     <p>{value}</p>
                 </div>
