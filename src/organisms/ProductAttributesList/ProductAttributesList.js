@@ -3,18 +3,20 @@ import InfoRow from '../../atoms/InfoRow'
 import Skeleton from '../../atoms/Skeleton'
 import './ProductAttributesList.styles.css'
 
-const LoadingState = () => {
+const LoadingState = () => (
     <div className='attributes-skeleton-container'>
         {[1, 2, 3, 4, 5, 6].map((item) => {
             return <Skeleton key={item} height='32px' />
         })}
     </div>
-}
+)
 
 const ProductAttributesList = ({ attributes, isLoading }) => (
     <section className='attributes-container'>
-        {isLoading ? <LoadingState />
-            : (
+        {isLoading ?
+            (<LoadingState />)
+            :
+            (
                 <>
                     {attributes.map(({ id, name, value_name }, index) => {
                         const isEven = index % 2 === 0
