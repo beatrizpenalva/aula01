@@ -4,3 +4,9 @@
     margin: 24px 0px;
     border-radius: 4px;
 }
+
+.attributes-skeleton-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
