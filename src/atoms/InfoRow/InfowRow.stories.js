@@ -3,7 +3,6 @@ import InfoRow from './InfoRow'
 export default {
     title: 'Atoms/InfoRow',
     component: InfoRow,
-    excludeStories: ['WithoutValue'],
     tags: ['autodocs'],
     parameters: {
         layout: 'centered',
@@ -42,7 +41,6 @@ export const Colored = {
 export const WithoutValue = {
     args: {
         ...defaultProps,
-        colored: true,
         value: null,
     },
 }
