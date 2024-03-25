@@ -13,7 +13,7 @@ const CardProduct = ({ onClick, product }) => {
                     <img src={product.pictures[0].url} aria-hidden className="card-image" />
                 </div>
             ) : (
-                <NoPicturesPlaceholder width='64px' />
+                <NoPicturesPlaceholder size='64px' />
             )}
             <div className="card-text-container">
                 <p>{name}</p>

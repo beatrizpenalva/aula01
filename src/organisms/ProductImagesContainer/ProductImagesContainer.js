@@ -8,8 +8,8 @@ import './ProductImagesContainer.styles.css'
 
 const EmptyState = () => (
     <div className='produc-images-empty-state'>
-        <NoPicturesPlaceholder border height='56px' />
-        <NoPicturesPlaceholder height='240px' />
+        <NoPicturesPlaceholder border size='56px' />
+        <NoPicturesPlaceholder size='240px' />
     </div>
 )
 
