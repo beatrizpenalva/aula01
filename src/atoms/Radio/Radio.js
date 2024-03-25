@@ -3,7 +3,7 @@ import './Radio.styles.css'
 
 const Radio = ({ checked, group, id, label, onChange, value }) => (
     <div className={`radio-input-container${checked ? ' radio-checked' : ''}`}>
-        <input type="radio" id={id} name={group} value={value} onChange={onChange} />
+        <input type='radio' id={id} name={group} value={value} onChange={onChange} />
         <label htmlFor={id}>{label}</label>
     </div>
 )
