@@ -1,5 +1,6 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
+import ErrorBoundary from './molecules/ErrorBoundary'
 import Home from './pages/Home'
 import PageNotFound from './pages/PageNotFound'
 import Product from './pages/Product'
@@ -12,14 +13,16 @@ const router = createBrowserRouter(
     {
       path: HOME,
       element: <Home />,
+      errorElement: <ErrorBoundary />,
     },
     {
       path: PRODUCT,
-      element: <Product />
+      element: <Product />,
+      errorElement: <ErrorBoundary />,
     },
     {
       path: '*',
-      element: <PageNotFound />
+      element: <PageNotFound />,
     }
   ]
 )
