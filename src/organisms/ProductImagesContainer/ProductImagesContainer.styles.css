@@ -3,6 +3,10 @@
     margin-left: 16px;
 }
 
+.produc-images-empty-state {
+    display: flex;
+}
+
 .product-images-section {
     display: flex;
     flex: 3;

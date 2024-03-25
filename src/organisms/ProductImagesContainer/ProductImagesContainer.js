@@ -1,9 +1,17 @@
 import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
+import NoPicturesPlaceholder from '../../atoms/NoPicturesPlaceholder'
 import RadioGroup from '../../atoms/RadioGroup'
 import RadioImage from '../../atoms/RadioImage'
 import Skeleton from '../../atoms/Skeleton'
 import './ProductImagesContainer.styles.css'
+
+const EmptyState = () => (
+    <div className='produc-images-empty-state'>
+        <NoPicturesPlaceholder border height='56px' />
+        <NoPicturesPlaceholder height='240px' />
+    </div>
+)
 
 const LoadingState = () => (
     <>
@@ -29,20 +37,24 @@ const ProductImagesContainer = ({ isLoading, pictures }) => {
         <section className='product-images-section' aria-hidden>
             {isLoading ? <LoadingState /> : (
                 <>
-                    <RadioGroup variant='vertical'>
-                        {pictures.map(({ id, url }) => (
-                            <RadioImage
-                                key={id}
-                                checked={url === mainPicture}
-                                id={id}
-                                group='product-details-image'
-                                onChange={() => setMainPicture(url)}
-                                url={url}
-                                value={id}
-                            />
-                        ))}
-                    </RadioGroup>
-                    <img src={mainPicture} className='product-image' />
+                    {!pictures.length ? <EmptyState /> : (
+                        <>
+                            <RadioGroup variant='vertical'>
+                                {pictures.map(({ id, url }) => (
+                                    <RadioImage
+                                        key={id}
+                                        checked={url === mainPicture}
+                                        id={id}
+                                        group='product-details-image'
+                                        onChange={() => setMainPicture(url)}
+                                        url={url}
+                                        value={id}
+                                    />
+                                ))}
+                            </RadioGroup>
+                            <img src={mainPicture} className='product-image' />
+                        </>
+                    )}
                 </>
             )}
         </section>
