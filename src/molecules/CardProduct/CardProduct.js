@@ -9,7 +9,7 @@ const CardProduct = ({ onClick, product }) => {
     return (
         <div type="button" onClick={onClick} className="card-container">
             {hasPictures ? (
-                <div className='card-image-wrapper'>
+                <div className='card-image-wrapper' data-testid='card-image'>
                     <img src={product.pictures[0].url} aria-hidden className="card-image" />
                 </div>
             ) : (
