@@ -1,17 +1,19 @@
 import PropTypes from 'prop-types'
 import './Skeleton.styles.css'
 
-const Skeleton = ({ height, width }) => (
-    <div className='skeleton' style={{ height, width }} />
+const Skeleton = ({ height, width, styles }) => (
+    <div className='skeleton' style={{ height, width, ...styles }} />
 )
 
 Skeleton.propTypes = {
     height: PropTypes.string,
+    styles: PropTypes.object,
     width: PropTypes.string,
 }
 
 Skeleton.defaultProps = {
     height: '100%',
+    styles: {},
     width: '100%',
 }
 
