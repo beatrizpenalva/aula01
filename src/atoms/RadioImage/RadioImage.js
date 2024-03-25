@@ -12,7 +12,7 @@ const RadioImage = ({ alt, checked, group, id, onChange, url, value }) => {
 }
 
 RadioImage.propTypes = {
-    alt: PropTypes.string.isRequired,
+    alt: PropTypes.string,
     checked: PropTypes.bool,
     group: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
@@ -22,6 +22,7 @@ RadioImage.propTypes = {
 }
 
 RadioImage.defaultProps = {
+    alt: '',
     checked: false,
 }
 
