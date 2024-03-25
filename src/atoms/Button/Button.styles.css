@@ -6,6 +6,11 @@
     padding: 8px;
 }
 
+.primary:hover,
+.warning:hover {
+    opacity: 90%;
+}
+
 .secondary {
     border-color: #0d3b66;
     border-radius: 4px;
@@ -13,6 +18,11 @@
     padding: 8px;
     border-width: 2px;
     border-style: solid;
+}
+
+.secondary:hover {
+    background-color: #0d3b66;
+    color: white;
 }
 
 .warning {
