@@ -12,7 +12,7 @@ const LoadingState = () => (
             <Skeleton height='80px' />
             <Skeleton height='80px' />
         </div>
-        <Skeleton className='product-image' width='200px' styles={{ 'margin-left': '16px' }} />
+        <Skeleton className='product-image' width='200px' styles={{ marginLeft: '16px' }} />
     </>
 )
 
@@ -32,6 +32,7 @@ const ProductImagesContainer = ({ isLoading, pictures }) => {
                     <RadioGroup variant='vertical'>
                         {pictures.map(({ id, url }) => (
                             <RadioImage
+                                key={id}
                                 checked={url === mainPicture}
                                 id={id}
                                 group='product-details-image'
