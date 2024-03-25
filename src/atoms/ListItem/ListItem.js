@@ -3,7 +3,7 @@ import './ListItem.styles.css'
 
 const ListItem = ({ children, showMarker }) => (
     <li>
-        {showMarker && <span className='marker' />}
+        {showMarker && <span className='marker' data-testid='marker' />}
         {children}
     </li>
 )
