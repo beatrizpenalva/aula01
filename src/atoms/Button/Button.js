@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import './Button.styles.css'
 
 const style = {
-    primary: 'primary',
-    secondary: 'secondary',
-    warning: 'warning',
+    primary: 'primary-button',
+    secondary: 'secondary-button',
+    warning: 'warning-button',
 }
 
 const Button = ({ ariaLabel, children, onClick, type, variant }) => (
