@@ -35,11 +35,12 @@ ProductAttributesList.propTypes = {
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         value_name: PropTypes.string.isRequired,
-    })).isRequired,
+    })),
     isLoading: PropTypes.bool,
 }
 
 ProductAttributesList.defaultProps = {
+    attributes: [],
     isLoading: false,
 }
 
