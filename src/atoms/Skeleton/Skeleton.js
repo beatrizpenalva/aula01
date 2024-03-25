@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import './Skeleton.styles.css'
 
-const Skeleton = ({ height, width, styles }) => (
+const Skeleton = ({ height, styles, width }) => (
     <div className='skeleton' style={{ height, width, ...styles }} />
 )
 
