@@ -20,7 +20,9 @@ const ProductImagesContainer = ({ isLoading, pictures }) => {
     const [mainPicture, setMainPicture] = useState('')
 
     useEffect(() => {
-        setMainPicture(pictures[0].url)
+        if (pictures.length) {
+            setMainPicture(pictures[0].url)
+        }
     }, [pictures])
 
     return (
