@@ -34,7 +34,7 @@ const ProductImagesContainer = ({ isLoading, pictures }) => {
     }, [pictures])
 
     return (
-        <section className='product-images-section' aria-hidden>
+        <section className='product-images-section'>
             {isLoading ? <LoadingState /> : (
                 <>
                     {!pictures.length ? <EmptyState /> : (
