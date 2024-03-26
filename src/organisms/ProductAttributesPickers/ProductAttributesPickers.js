@@ -30,7 +30,7 @@ const ProductAttributesPickers = ({ checkedPickers, isLoading, onChange, pickers
                 <h2>Produto:</h2>
                 <h3 className='section-title'>{productName}</h3>
                 {pickers.map(({ picker_id, picker_name, products }) => {
-                    const checkedOptionOnPicker = checkedPickers.find(({ category }) => category === picker_name)
+                    const checkedOptionOnPicker = checkedPickers?.find((item) => item?.category === picker_name)
                     const pickerGroupValue = checkedOptionOnPicker?.value
                     const pickerGroupTitle = pickerGroupValue ? (<p>{picker_name}: <b>{pickerGroupValue}</b></p>) : picker_name
 
