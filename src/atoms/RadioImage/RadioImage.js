@@ -1,15 +1,23 @@
 import PropTypes from 'prop-types'
 import './RadioImage.styles.css'
 
-const RadioImage = ({ alt, checked, group, id, onChange, url, value }) => {
-
-    return (
-        <label htmlFor={id}>
-            <img src={url} className={`radio-image${checked ? ' radio-image-checked' : ''}`} alt={alt} />
-            <input type='radio' id={id} name={group} value={value} onChange={onChange} />
-        </label>
-    )
-}
+const RadioImage = ({ alt, checked, group, id, onChange, url, value }) => (
+    <label htmlFor={id}>
+        <img
+            src={url}
+            className={`radio-image${checked ? ' radio-image-checked' : ''}`}
+            alt={alt}
+        />
+        <input
+            type='radio'
+            role='radio'
+            id={id}
+            name={group}
+            value={value}
+            onChange={onChange}
+        />
+    </label>
+)
 
 RadioImage.propTypes = {
     alt: PropTypes.string,
