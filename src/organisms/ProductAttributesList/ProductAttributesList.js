@@ -13,17 +13,20 @@ const LoadingState = () => (
 
 const ProductAttributesList = ({ attributes, isLoading }) => (
     <section className='attributes-container'>
-        {isLoading ?
-            (<LoadingState />)
-            :
-            (
+        {isLoading ? <LoadingState />
+            : (
                 <>
                     <h6 className='subsection-title'>Ficha técnica:</h6>
                     {attributes.map(({ id, name, value_name }, index) => {
                         const isEven = index % 2 === 0
 
                         return (
-                            <InfoRow key={id} label={name} value={value_name} colored={isEven} />
+                            <InfoRow
+                                key={id}
+                                label={name}
+                                value={value_name}
+                                colored={isEven}
+                            />
                         )
                     })}
                 </>
