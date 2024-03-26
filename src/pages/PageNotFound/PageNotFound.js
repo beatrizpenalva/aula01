@@ -10,7 +10,7 @@ const PageNotFound = () => {
 
     return (
         <FeedbackWrapper>
-            <h1>Ops, página nao econtrada</h1>
+            <h1>Ops, página não econtrada</h1>
             <p>Para ser redirecionado à página inicial, só clicar no botão abaixo.</p>
             <Button onClick={() => navigate(HOME)}>Ir para o início</Button>
         </FeedbackWrapper>
