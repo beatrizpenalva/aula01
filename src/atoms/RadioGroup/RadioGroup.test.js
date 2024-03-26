@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { composeStory } from '@storybook/react'
 import Meta, { Horizontal, Vertical, WithoutLabel } from './RadioGroup.stories'
 
-describe.only('RadioGroup', () => {
+describe('RadioGroup', () => {
     test('render properly style when variant is horizontal', () => {
         const HorizontalWrapper = composeStory(Horizontal, Meta)
         render(<HorizontalWrapper />)

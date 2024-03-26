@@ -4,7 +4,6 @@ import Radio from '../Radio'
 export default {
     title: 'Atoms/RadioGroup',
     component: RadioGroup,
-    // excludeStories: ['WithoutLabel'],
     tags: ['autodocs'],
     parameters: {
         layout: 'centered',
