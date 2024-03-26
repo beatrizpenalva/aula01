@@ -8,7 +8,14 @@ const style = {
 }
 
 const Button = ({ ariaLabel, children, onClick, type, variant }) => (
-    <button aria-label={ariaLabel} className={style[variant]} onClick={onClick} type={type}>{children}</button>
+    <button
+        aria-label={ariaLabel}
+        className={style[variant]}
+        onClick={onClick}
+        type={type}
+    >
+        {children}
+    </button>
 )
 
 Button.propTypes = {

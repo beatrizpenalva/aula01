@@ -10,8 +10,20 @@ const SearchInput = ({ ariaLabel, onClick }) => {
         <form className="container">
             <label htmlFor="search">O que você está buscando?</label>
             <div className="input-container">
-                <input type="search" id="search" name="search" onChange={e => setValue(e.target.value)} value={value} />
-                <Button ariaLabel={ariaLabel} onClick={() => onClick(value)} type="submit">Buscar</Button>
+                <input
+                    type="search"
+                    id="search"
+                    name="search"
+                    onChange={e => setValue(e.target.value)}
+                    value={value}
+                />
+                <Button
+                    ariaLabel={ariaLabel}
+                    onClick={() => onClick(value)}
+                    type="submit"
+                >
+                    Buscar
+                </Button>
             </div>
         </form>
     )

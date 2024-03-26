@@ -396,7 +396,7 @@ export default {
             "settings": {
                 "listing_strategy": "open"
             },
-            "name": "Samsung Galaxy Folder 2 Dual SIM 16 GB Negro 2 GB RAM",
+            "name": "Samsung Galaxy Folder 2 Dual SIM 16 GB Negro 4 GB RAM",
             "attributes": [
                 {
                     "id": "BRAND",
@@ -779,7 +779,7 @@ export default {
             "settings": {
                 "listing_strategy": "open"
             },
-            "name": "Samsung Galaxy Folder 2 Dual SIM 16 GB Negro 2 GB RAM",
+            "name": "Samsung Galaxy Folder 2 Dual SIM 16 GB Negro 8 GB RAM",
             "attributes": [
                 {
                     "id": "BRAND",
