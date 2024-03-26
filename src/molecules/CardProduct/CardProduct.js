@@ -7,10 +7,19 @@ const CardProduct = ({ onClick, product }) => {
     const hasPictures = pictures.length
 
     return (
-        <div type="button" onClick={onClick} className="card-container" aria-label={`Ver detalhes de ${name}`}>
+        <button
+            type='button'
+            onClick={onClick}
+            className="card-container"
+            aria-label={`Ver detalhes de ${name}`}
+        >
             {hasPictures ? (
                 <div className='card-image-wrapper' data-testid='card-image'>
-                    <img src={product.pictures[0].url} aria-hidden className="card-image" />
+                    <img
+                        src={product.pictures[0].url}
+                        aria-hidden
+                        className="card-image"
+                    />
                 </div>
             ) : (
                 <NoPicturesPlaceholder size='64px' />
@@ -19,7 +28,7 @@ const CardProduct = ({ onClick, product }) => {
                 <p>{name}</p>
                 <p>Por: {domain_id}</p>
             </div>
-        </div>
+        </button>
     )
 }
 
