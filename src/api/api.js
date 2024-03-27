@@ -1,32 +1,28 @@
-import getProductDetail from '../api/fixtures/getProductDetails'
-import searchProductsMock from './fixtures/searchProducts'
+const BASE_URL = 'https://api.mercadolibre.com/'
+const SITE_ID = 'MLB'
+
+const request = {
+    method: 'GET',
+    headers: {
+        Authorization: process.env.ACCESS_TOKEN,
+    },
+}
 
 const getProductDetails = async ({ productId }) => {
-    console.log(productId)
-
-    const response = await new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(getProductDetail)
-        }, 1000)
-    })
-
-    return response
+    const url = `${BASE_URL}products${productId}`
+    const response = await fetch(url, request)
+    return response.json()
 
 }
 
 const searchProducts = async ({ product }) => {
-    console.log(product)
-
-    const response = await new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(searchProductsMock)
-        }, 1000)
-    })
-
-    return response
+    const url = `${BASE_URL}products/search?status=active&site_id=${SITE_ID}&q=${product}`
+    const response = await fetch(url, request)
+    return response.json()
 }
 
 export default {
     getProductDetails,
+    getSessionToken,
     searchProducts,
 }
