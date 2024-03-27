@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.mercadolibre.com/'
+const BASE_URL = 'https://api.mercadolivre.com.br/'
 const SITE_ID = 'MLB'
 
 const request = {
