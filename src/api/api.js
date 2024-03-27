@@ -23,6 +23,5 @@ const searchProducts = async ({ product }) => {
 
 export default {
     getProductDetails,
-    getSessionToken,
     searchProducts,
 }
