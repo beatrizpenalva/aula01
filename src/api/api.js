@@ -4,7 +4,7 @@ const SITE_ID = 'MLB'
 const request = {
     method: 'GET',
     headers: {
-        Authorization: process.env.REACT_APP_ACCESS_TOKEN,
+        Authorization: `Bearer ${process.env.REACT_APP_ACCESS_TOKEN}`,
     },
 }
 
