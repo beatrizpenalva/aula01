@@ -1,1 +1,1 @@
-export { default } from './InitialState'
+export { default } from './HomeInitialState'
