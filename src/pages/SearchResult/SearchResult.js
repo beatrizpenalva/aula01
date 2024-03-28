@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ErrorState from '../../molecules/ErrorState'
 import HomeEmptyState from '../../molecules/HomeEmptyState'
+import HomeInitialState from '../../molecules/HomeInitialState'
 import HomeLoadingState from '../../molecules/HomeLoadingState'
 import HomeSearchResultList from '../../organisms/HomeSearchResultList'
 import PageWrapper from '../../templates/PageWrapper'
@@ -26,8 +27,9 @@ const SearchResult = () => {
 
     return (
         <PageWrapper>
-            {isLoading ? (<HomeLoadingState />) : (
+            {!searchId ? (<HomeInitialState />) : (
                 <>
+                    {isLoading && <HomeLoadingState />}
                     {isError && (<ErrorState description={ERROR_DESCRIPTION} onTryAgain={() => getProductsAvailable(searchId)} />)}
                     {isEmpty && (<HomeEmptyState product={searchId} />)}
                     {renderContent && (<HomeSearchResultList product={searchId} productsList={productsList} />)}

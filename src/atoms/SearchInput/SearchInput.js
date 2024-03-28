@@ -4,22 +4,26 @@ import Button from '../Button'
 import './SearchInput.styles.css'
 
 const SearchInput = ({ ariaLabel, onClick }) => {
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState({})
+
+    const handleSubmit = () => {
+        value.preventDefault()
+        onClick(value.target.value)
+    }
 
     return (
-        <form className="container">
+        <form onSubmit={e => e.preventDefault()} role="search" className="container">
             <label htmlFor="search">O que você está buscando?</label>
             <div className="input-container">
                 <input
                     type="search"
                     id="search"
                     name="search"
-                    onChange={e => setValue(e.target.value)}
-                    value={value}
+                    onChange={e => setValue(e)}
                 />
                 <Button
                     ariaLabel={ariaLabel}
-                    onClick={() => onClick(value)}
+                    onClick={handleSubmit}
                     type="submit"
                 >
                     Buscar
