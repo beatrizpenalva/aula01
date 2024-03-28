@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import api from '../api'
 
+const token = localStorage.getItem('token')
+
 const useSearchProducts = () => {
     const [productsList, setProductsList] = useState([])
     const [isError, setIsError] = useState(false)
@@ -11,7 +13,7 @@ const useSearchProducts = () => {
     const getProductsAvailable = async (product) => {
         setIsLoading(true)
         try {
-            const { results } = await api.searchProducts({ product })
+            const { results } = await api.searchProducts({ product, token })
             setProductsList(results)
         } catch {
             setIsError(true)

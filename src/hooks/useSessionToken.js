@@ -8,10 +8,7 @@ const useSessionToken = () => {
     const getSessionToken = async () => {
         setIsInitialLoading(true)
         try {
-            const code = await api.getCode()
-            console.log(code)
-            const token = getSessionToken({ code })
-            console.log(token)
+            const token = api.getSessionToken()
             localStorage.setItem('token', token)
         } catch {
             setIsInitialError(true)
