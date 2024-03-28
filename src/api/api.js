@@ -5,6 +5,7 @@ const request = {
     method: 'GET',
     headers: {
         Authorization: `Bearer ${process.env.REACT_APP_ACCESS_TOKEN}`,
+        'Content-type': 'application/json',
     },
 }
 
