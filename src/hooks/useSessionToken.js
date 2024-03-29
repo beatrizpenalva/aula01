@@ -12,7 +12,7 @@ const useSessionToken = () => {
         try {
             const { access_token, refresh_token } = api.getSessionToken()
             localStorage.setItem('acessToken', access_token)
-            localStorage.setItem('refreshToke', refresh_token)
+            localStorage.setItem('refreshToken', refresh_token)
         } catch (error) {
             const isInvalidGrantError = error.response.error === 'invalid_grant'
 
@@ -22,7 +22,7 @@ const useSessionToken = () => {
             } else {
                 const { access_token, refresh_token } = await api.getNewRefreshToken({ refreshToken })
                 localStorage.setItem('acessToken', access_token)
-                localStorage.setItem('refreshToke', refresh_token)
+                localStorage.setItem('refreshToken', refresh_token)
             }
         } finally {
             setIsInitialLoading(false)
