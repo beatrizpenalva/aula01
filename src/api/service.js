@@ -6,14 +6,18 @@ const BASE_URL = 'https://api.mercadolibre.com/'
 const TOKEN_URL = `${BASE_URL}oauth/token`
 
 export const createNewRefreshToken = ({ lastRefreshToken }) => {
-    fetch(TOKEN_URL, {
+    const body = `grant_type=refresh_token&client_id=${CLIENT_ID}&client_secret=${CLIENT_KEY}&refresh_token=${lastRefreshToken}`
+
+    const data = fetch(TOKEN_URL, {
         method: 'POST',
         headers: {
             'accept': 'application/json',
             'content-type': 'application/x-www-form-urlencoded'
         },
-        body: `grant_type=refresh_token&client_id=${CLIENT_ID}&client_secret=${CLIENT_KEY}&refresh_token=${lastRefreshToken}`
-    })
+        body,
+    }).then(response => response.json())
+
+    return data
 }
 
 export const getProductDetails = async ({ accessToken, productId }) => {
@@ -25,7 +29,7 @@ export const getProductDetails = async ({ accessToken, productId }) => {
             Authorization: `Bearer ${accessToken}`,
             'Content-type': 'application/json',
         },
-    })
+    }).then(response => response.json())
 
     return data
 }
@@ -39,7 +43,7 @@ export const searchProducts = async ({ accessToken, product }) => {
             Authorization: `Bearer ${accessToken}`,
             'Content-type': 'application/json',
         },
-    })
+    }).then(response => response.json())
 
     return data
 }
