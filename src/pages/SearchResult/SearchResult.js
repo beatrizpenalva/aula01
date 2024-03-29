@@ -30,14 +30,10 @@ const SearchResult = () => {
 
     useEffect(() => {
         if (!searchId) return
+        getSessionToken()
         getProductsAvailable(searchId)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchId])
-
-    useEffect(() => {
-        getSessionToken()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
 
     return (
         <PageWrapper>
