@@ -25,7 +25,7 @@ const useSearchProducts = () => {
             } else {
                 const { access_token, refresh_token } = await api.getNewRefreshToken({ refreshToken })
                 localStorage.setItem('acessToken', access_token)
-                localStorage.setItem('refreshToke', refresh_token)
+                localStorage.setItem('refreshToken', refresh_token)
             }
         } finally {
             setIsLoading(false)
