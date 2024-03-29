@@ -12,6 +12,7 @@ const useSearchProducts = () => {
         setIsLoading(true)
         try {
             const data = await api.getProducts({ product })
+            console.log(data)
             setProductsList(data)
         } catch (error) {
             setIsError(true)
