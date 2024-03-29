@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import api from '../api'
 
-const token = localStorage.getItem('token')
+const token = localStorage.getItem('acessToken')
 
 const useSearchProducts = () => {
     const [productsList, setProductsList] = useState([])
