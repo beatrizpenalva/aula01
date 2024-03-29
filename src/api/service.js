@@ -17,15 +17,17 @@ export const createNewRefreshToken = ({ lastRefreshToken }) => {
 }
 
 export const getProductDetails = async ({ accessToken, productId }) => {
-    const url = `${BASE_URL}products/${productId}`
+    const url = `${BASE_URL}items/${productId}/description`
 
-    await fetch(url, {
+    const data = await fetch(url, {
         method: 'GET',
         headers: {
             Authorization: `Bearer ${accessToken}`,
             'Content-type': 'application/json',
         },
     })
+
+    return data
 }
 
 export const searchProducts = async ({ accessToken, product }) => {
@@ -37,7 +39,7 @@ export const searchProducts = async ({ accessToken, product }) => {
             Authorization: `Bearer ${accessToken}`,
             'Content-type': 'application/json',
         },
-    }).then(response => response.json())
+    })
 
     return data
 }
