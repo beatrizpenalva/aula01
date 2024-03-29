@@ -7,8 +7,8 @@ const SITE_ID = 'MLB'
 const BASE_URL = 'https://api.mercadolibre.com/'
 const TOKEN_URL = `${BASE_URL}oauth/token`
 
-const getNewRefreshToken = ({ refreshToken }) => {
-    const data = fetch(TOKEN_URL, {
+const getNewRefreshToken = async ({ refreshToken }) => {
+    const data = await fetch(TOKEN_URL, {
         method: 'POST',
         headers: {
             'accept': 'application/json',
@@ -20,8 +20,8 @@ const getNewRefreshToken = ({ refreshToken }) => {
     return data
 }
 
-const getSessionToken = () => {
-    const sessionTokens = fetch(TOKEN_URL, {
+const getSessionToken = async () => {
+    const sessionTokens = await fetch(TOKEN_URL, {
         method: 'POST',
         headers: {
             'accept': 'application/json',
