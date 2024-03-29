@@ -5,7 +5,7 @@ const SITE_ID = 'MLB'
 const BASE_URL = 'https://api.mercadolibre.com/'
 const TOKEN_URL = `${BASE_URL}oauth/token`
 
-const createNewRefreshToken = ({ lastRefreshToken }) => {
+export const createNewRefreshToken = ({ lastRefreshToken }) => {
     fetch(TOKEN_URL, {
         method: 'POST',
         headers: {
@@ -16,7 +16,7 @@ const createNewRefreshToken = ({ lastRefreshToken }) => {
     })
 }
 
-const getProductDetails = async ({ accessToken, productId }) => {
+export const getProductDetails = async ({ accessToken, productId }) => {
     const url = `${BASE_URL}products/${productId}`
 
     await fetch(url, {
@@ -28,7 +28,7 @@ const getProductDetails = async ({ accessToken, productId }) => {
     })
 }
 
-const searchProducts = async ({ accessToken, product }) => {
+export const searchProducts = async ({ accessToken, product }) => {
     const url = `${BASE_URL}sites/${SITE_ID}/search?q=${product}`
 
     const data = await fetch(url, {
@@ -42,9 +42,3 @@ const searchProducts = async ({ accessToken, product }) => {
     return data
 }
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
-    createNewRefreshToken,
-    getProductDetails,
-    searchProducts,
-}

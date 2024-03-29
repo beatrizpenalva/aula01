@@ -1,6 +1,6 @@
 import { addDoc, collection, getDocs } from 'firebase/firestore'
 
-const getAccessToken = async () => {
+export const getAccessToken = async () => {
     try {
         const tokens = await getDocs(collection('tokens'))
 
@@ -12,7 +12,7 @@ const getAccessToken = async () => {
     }
 }
 
-const getRefreshToken = async () => {
+export const getRefreshToken = async () => {
     try {
         const tokens = await getDocs(collection('tokens'))
 
@@ -24,7 +24,7 @@ const getRefreshToken = async () => {
     }
 }
 
-const saveTokens = async ({ accessToken, refreshToken }) => {
+export const saveTokens = async ({ accessToken, refreshToken }) => {
     try {
         await addDoc(collection('tokens'), {
             accessToken,
@@ -33,11 +33,4 @@ const saveTokens = async ({ accessToken, refreshToken }) => {
     } catch (error) {
         return error
     }
-}
-
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
-    getAccessToken,
-    getRefreshToken,
-    saveTokens,
 }
