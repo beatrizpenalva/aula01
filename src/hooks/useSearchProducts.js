@@ -11,8 +11,8 @@ const useSearchProducts = () => {
     const getProductsAvailable = async (product) => {
         setIsLoading(true)
         try {
-            const { results } = await api.getProducts({ product })
-            setProductsList(results)
+            const data = await api.getProducts({ product })
+            setProductsList(data)
         } catch (error) {
             setIsError(true)
         } finally {

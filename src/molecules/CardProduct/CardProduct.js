@@ -3,29 +3,29 @@ import NoPicturesPlaceholder from '../../atoms/NoPicturesPlaceholder'
 import './CardProduct.styles.css'
 
 const CardProduct = ({ onClick, product }) => {
-    const { domain_id, name, pictures } = product ?? {}
-    const hasPictures = pictures.length
+    const { domain_id, thumbnail, title } = product ?? {}
 
     return (
         <button
             type='button'
             onClick={onClick}
             className="card-container"
-            aria-label={`Ver detalhes de ${name}`}
+            aria-label={`Ver detalhes de ${title}`}
         >
-            {hasPictures ? (
+            {thumbnail ? (
                 <div className='card-image-wrapper' data-testid='card-image'>
                     <img
-                        src={product.pictures[0].url}
+                        src={thumbnail}
                         aria-hidden
                         className="card-image"
+                        alt=''
                     />
                 </div>
             ) : (
                 <NoPicturesPlaceholder size='64px' />
             )}
             <div className="card-text-container">
-                <p>{name}</p>
+                <p>{title}</p>
                 <p>Por: {domain_id}</p>
             </div>
         </button>
