@@ -29,6 +29,7 @@ const SearchResult = () => {
     } = useSessionToken()
 
     useEffect(() => {
+        if (!searchId) return
         getProductsAvailable(searchId)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchId])
