@@ -30,7 +30,8 @@ const getSessionToken = () => {
         body: `grant_type=authorization_code&client_id=${CLIENT_ID}&client_secret=${CLIENT_KEY}&code=${CODE}&redirect_uri=${REDIRECT_URI}`
     }).then(r => {
         console.log(r)
-        r.json()
+        console.log(r.json())
+        return r.json()
     })
     console.log(sessionTokens)
     return sessionTokens
