@@ -7,6 +7,19 @@ const SITE_ID = 'MLB'
 const BASE_URL = 'https://api.mercadolibre.com/'
 const TOKEN_URL = `${BASE_URL}oauth/token`
 
+const getNewRefreshToken = ({ refreshToken }) => {
+    const data = fetch(TOKEN_URL, {
+        method: 'POST',
+        headers: {
+            'accept': 'application/json',
+            'content-type': 'application/x-www-form-urlencoded'
+        },
+        body: `grant_type=refresh_token&client_id=${CLIENT_ID}&client_secret=${CLIENT_KEY}&refresh_token=${refreshToken}`
+    }).then(response => response.json())
+
+    return data
+}
+
 const getSessionToken = () => {
     const sessionTokens = fetch(TOKEN_URL, {
         method: 'POST',
@@ -19,7 +32,6 @@ const getSessionToken = () => {
 
     return sessionTokens
 }
-
 
 const getProductDetails = async ({ productId, token }) => {
     const url = `${BASE_URL}products/${productId}`
@@ -49,6 +61,7 @@ const searchProducts = async ({ product, token }) => {
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
+    getNewRefreshToken,
     getProductDetails,
     getSessionToken,
     searchProducts,

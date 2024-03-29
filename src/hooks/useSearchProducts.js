@@ -2,6 +2,7 @@ import { useState } from 'react'
 import api from '../api'
 
 const token = localStorage.getItem('acessToken')
+const refreshToken = localStorage.getItem('refreshToken')
 
 const useSearchProducts = () => {
     const [productsList, setProductsList] = useState([])
@@ -15,8 +16,17 @@ const useSearchProducts = () => {
         try {
             const { results } = await api.searchProducts({ product, token })
             setProductsList(results)
-        } catch {
-            setIsError(true)
+        } catch (error) {
+            const isInvalidGrantError = error.response.error === 'invalid_grant'
+
+            if (!isInvalidGrantError) {
+                setIsError(true)
+                return
+            } else {
+                const { access_token, refresh_token } = await api.getNewRefreshToken({ refreshToken })
+                localStorage.setItem('acessToken', access_token)
+                localStorage.setItem('refreshToke', refresh_token)
+            }
         } finally {
             setIsLoading(false)
         }
