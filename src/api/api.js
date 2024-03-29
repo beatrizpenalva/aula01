@@ -1,22 +1,20 @@
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
 const CLIENT_KEY = process.env.REACT_APP_CLIENT_SECRET
+const CODE = process.env.REACT_APP_CODE
 const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI
 const SITE_ID = 'MLB'
 
 const BASE_URL = 'https://api.mercadolibre.com/'
-const CODE_URL = `https://auth.mercadolivre.com.br/authorization?response_type=code&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}`
 const TOKEN_URL = `${BASE_URL}oauth/token`
 
 const getSessionToken = () => {
-    const code = fetch(CODE_URL)
-
     const sessionTokens = fetch(TOKEN_URL, {
         method: 'POST',
         headers: {
             'accept': 'application/json',
             'content-type': 'application/x-www-form-urlencoded'
         },
-        body: `grant_type=authorization_code&client_id=${CLIENT_ID}&client_secret=${CLIENT_KEY}&code=${code}&redirect_uri=${REDIRECT_URI}`
+        body: `grant_type=authorization_code&client_id=${CLIENT_ID}&client_secret=${CLIENT_KEY}&code=${CODE}&redirect_uri=${REDIRECT_URI}`
     }).then(r => r.json())
 
     return sessionTokens
