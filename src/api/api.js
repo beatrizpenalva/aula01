@@ -15,9 +15,7 @@ const getDetails = async ({ productId }) => {
 const getProducts = async ({ product }) => {
     try {
         const { accessToken } = await getAccessToken()
-        const data = await searchProducts({ accessToken, product })
-        const { results } = data
-        console.log(results)
+        const { results } = await searchProducts({ accessToken, product })
         return results
     } catch (error) {
         errorHandler(error)
