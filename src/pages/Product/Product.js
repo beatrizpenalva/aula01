@@ -3,7 +3,8 @@ import PageWrapper from '../../templates/PageWrapper'
 import ProductDetails from '../../organisms/ProductDetails'
 
 const Product = () => {
-    const { details } = useLocation()
+    const location = useLocation()
+    const { details } = location
 
     return (
         <PageWrapper>
