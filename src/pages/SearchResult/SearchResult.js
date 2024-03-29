@@ -7,7 +7,6 @@ import HomeLoadingState from '../../molecules/HomeLoadingState'
 import HomeSearchResultList from '../../organisms/HomeSearchResultList'
 import PageWrapper from '../../templates/PageWrapper'
 import useSearchProducts from '../../hooks/useSearchProducts'
-import useSessionToken from '../../hooks/useSessionToken'
 
 const ERROR_DESCRIPTION = 'Não conseguimos efetuar a busca. Por favor, tente novamente.'
 
@@ -22,15 +21,8 @@ const SearchResult = () => {
         renderContent,
     } = useSearchProducts()
 
-    const {
-        getSessionToken,
-        isInitialError,
-        isInitialLoading,
-    } = useSessionToken()
-
     useEffect(() => {
         if (!searchId) return
-        getSessionToken()
         getProductsAvailable(searchId)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchId])
@@ -39,8 +31,8 @@ const SearchResult = () => {
         <PageWrapper>
             {!searchId ? (<HomeInitialState />) : (
                 <>
-                    {(isLoading || isInitialLoading) && <HomeLoadingState />}
-                    {(isError || isInitialError) && (<ErrorState description={ERROR_DESCRIPTION} onTryAgain={() => getProductsAvailable(searchId)} />)}
+                    {isLoading && <HomeLoadingState />}
+                    {isError && (<ErrorState description={ERROR_DESCRIPTION} onTryAgain={() => getProductsAvailable(searchId)} />)}
                     {isEmpty && (<HomeEmptyState product={searchId} />)}
                     {renderContent && (<HomeSearchResultList product={searchId} productsList={productsList} />)}
                 </>
