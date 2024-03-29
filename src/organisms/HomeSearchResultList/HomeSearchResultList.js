@@ -7,9 +7,11 @@ const HomeSearchResultList = ({ product, productsList }) => {
     const navigate = useNavigate()
 
     const handleViewProductDetails = ({ item, productId }) => {
-        navigate({
-            pathname: getProductDetailsUrl(productId),
-            state: item,
+        const url = getProductDetailsUrl(productId)
+        navigate(url, {
+            state: {
+                item
+            },
         })
     }
 

@@ -4,11 +4,11 @@ import ProductDetails from '../../organisms/ProductDetails'
 
 const Product = () => {
     const location = useLocation()
-    const { state: { details } } = location
+    const { state: { item } } = location
 
     return (
         <PageWrapper>
-            <ProductDetails details={details} />
+            <ProductDetails details={item} />
         </PageWrapper>
     )
 }
