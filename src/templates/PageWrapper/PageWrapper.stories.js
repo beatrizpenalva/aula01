@@ -1,8 +1,23 @@
+import { RouterProvider, createMemoryRouter } from 'react-router-dom'
 import PageWrapper from './PageWrapper'
+
+const routes = [
+    {
+        path: '/',
+        element: <PageWrapper />
+    },
+]
+
+const router = createMemoryRouter(routes, {
+    initialEntries: ['/'],
+    initialIndex: 1,
+})
+
+const BaseComponent = () => <RouterProvider router={router} />
 
 export default {
     title: 'Templates/PageWrapper',
-    component: PageWrapper,
+    component: BaseComponent,
     tags: ['autodocs'],
     parameters: {
         layout: 'fullscreen',
