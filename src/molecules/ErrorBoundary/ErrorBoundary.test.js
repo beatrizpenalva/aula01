@@ -1,4 +1,3 @@
-
 import userEvent from '@testing-library/user-event'
 import { useNavigate } from 'react-router-dom'
 import { render, screen } from '@testing-library/react'
@@ -9,7 +8,7 @@ jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useNavigate: jest.fn(() => ({
         navigate: jest.fn(),
-    }),)
+    }))
 }))
 
 describe('ErrorBoundary', () => {
