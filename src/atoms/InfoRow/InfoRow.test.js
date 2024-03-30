@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import Meta, { Sample, Colored, WithoutValue } from './InfowRow.stories'
-import { composeStory } from '@storybook/react';
+import { composeStory } from '@storybook/react'
 
 describe('InfoRow', () => {
     test('render properly style when receive colored prop as false', () => {
