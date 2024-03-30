@@ -1,4 +1,4 @@
-import { createNewRefreshToken, getProductDetails, searchProducts, BASE_URL, SITE_ID, TOKEN_URL } from './service'
+import service, { BASE_URL, SITE_ID, TOKEN_URL } from './service'
 
 describe('service', () => {
     beforeEach(() => {
@@ -9,7 +9,7 @@ describe('service', () => {
 
     describe('createNewRefreshToken', () => {
         test('call fetch with properly url, headers, method and body', async () => {
-            await createNewRefreshToken({ lastRefreshToken: 'IAmAToken' })
+            await service.createNewRefreshToken({ lastRefreshToken: 'IAmAToken' })
 
             expect(global.fetch).toHaveBeenCalledWith(TOKEN_URL, {
                 method: 'POST',
@@ -24,7 +24,7 @@ describe('service', () => {
 
     describe('getProductDetails', () => {
         test('call fetch with properly url, headers and method', async () => {
-            await getProductDetails({ accessToken: 'IAmAToken', productId: 'IAmAnId' })
+            await service.getProductDetails({ accessToken: 'IAmAToken', productId: 'IAmAnId' })
 
             const url = `${BASE_URL}items/IAmAnId`
 
@@ -40,7 +40,7 @@ describe('service', () => {
 
     describe('searchProducts', () => {
         test('call fetch with properly url, headers and method', async () => {
-            await searchProducts({ accessToken: 'IAmAToken', product: 'IAmAProduct' })
+            await service.searchProducts({ accessToken: 'IAmAToken', product: 'IAmAProduct' })
 
             const url = `${BASE_URL}sites/${SITE_ID}/search?q=IAmAProduct`
 
