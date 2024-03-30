@@ -7,9 +7,16 @@ export default {
     parameters: {
         layout: 'fullscreen',
     },
+    argTypes: {
+        product: {
+            description: 'Nome do produto'
+        },
+    },
 }
 
 export const Sample = {
-    args: {},
+    args: {
+        product: 'Celular'
+    },
 }
 
