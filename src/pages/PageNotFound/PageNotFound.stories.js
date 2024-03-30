@@ -6,7 +6,7 @@ const routes = [
         path: '/',
         element: <PageNotFound />,
     },
-];
+]
 
 const router = createMemoryRouter(routes, {
     initialEntries: ['/'],

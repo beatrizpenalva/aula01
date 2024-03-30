@@ -6,7 +6,7 @@ const routes = [
         path: '/',
         element: <Home />,
     },
-];
+]
 
 const router = createMemoryRouter(routes, {
     initialEntries: ['/'],

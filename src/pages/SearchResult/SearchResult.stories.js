@@ -6,7 +6,7 @@ const routes = [
         path: '/result/:searchId',
         element: <SearchResult />,
     },
-];
+]
 
 const router = createMemoryRouter(routes, {
     initialEntries: ['/result/423423423'],
