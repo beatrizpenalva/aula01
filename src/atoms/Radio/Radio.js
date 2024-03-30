@@ -8,7 +8,6 @@ const Radio = ({ checked, group, id, label, onChange, value }) => (
     >
         <input
             type='radio'
-            role='radio'
             id={id}
             name={group}
             value={value}

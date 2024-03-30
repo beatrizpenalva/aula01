@@ -7,10 +7,10 @@ const RadioImage = ({ alt, checked, group, id, onChange, url, value }) => (
             src={url}
             className={`radio-image${checked ? ' radio-image-checked' : ''}`}
             alt={alt}
+            aria-hidden={alt ? true : false}
         />
         <input
             type='radio'
-            role='radio'
             id={id}
             name={group}
             value={value}

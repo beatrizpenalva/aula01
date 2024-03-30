@@ -8,7 +8,7 @@ const NoPicturesPlaceholder = ({ border, size }) => (
         style={{ height: size, width: size }}
         data-testid='default-img-container'
     >
-        <img src={IconNoPictures} aria-hidden className='no-pictures-icon' />
+        <img src={IconNoPictures} aria-hidden className='no-pictures-icon' alt='' />
     </div>
 )
 
