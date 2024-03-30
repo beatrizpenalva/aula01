@@ -1,17 +1,5 @@
 import { addDoc, collection, getDocs } from 'firebase/firestore'
 
-const getAccessToken = async () => {
-    try {
-        const tokens = await getDocs(collection('tokens'))
-
-        return {
-            accessToken: tokens.where('accessToken').get(),
-        }
-    } catch (error) {
-        return error
-    }
-}
-
 const getRefreshToken = async () => {
     try {
         const tokens = await getDocs(collection('tokens'))
@@ -37,7 +25,6 @@ const saveTokens = async ({ accessToken, refreshToken }) => {
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-    getAccessToken,
     getRefreshToken,
     saveTokens
 }

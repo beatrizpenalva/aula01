@@ -20,31 +20,17 @@ const createNewRefreshToken = ({ lastRefreshToken }) => {
     return data
 }
 
-const getProductDetails = async ({ accessToken, productId }) => {
+const getProductDetails = async ({ productId }) => {
     const url = `${BASE_URL}items/${productId}?include_attributes=all`
 
-    const data = await fetch(url, {
-        method: 'GET',
-        headers: {
-            Authorization: `Bearer ${accessToken}`,
-            'Content-type': 'application/json',
-        },
-    }).then(response => response.json())
-
+    const data = await fetch(url).then(response => response.json())
     return data
 }
 
 const searchProducts = async ({ accessToken, product }) => {
     const url = `${BASE_URL}sites/${SITE_ID}/search?q=${product}`
 
-    const data = await fetch(url, {
-        method: 'GET',
-        headers: {
-            Authorization: `Bearer ${accessToken}`,
-            'Content-type': 'application/json',
-        },
-    }).then(response => response.json())
-
+    const data = await fetch(url).then(response => response.json())
     return data
 }
 

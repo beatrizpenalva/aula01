@@ -27,14 +27,7 @@ describe('service', () => {
             await service.getProductDetails({ accessToken: 'IAmAToken', productId: 'IAmAnId' })
 
             const url = `${BASE_URL}items/IAmAnId?include_attributes=all`
-
-            expect(global.fetch).toHaveBeenCalledWith(url, {
-                method: 'GET',
-                headers: {
-                    Authorization: 'Bearer IAmAToken',
-                    'Content-type': 'application/json',
-                },
-            })
+            expect(global.fetch).toHaveBeenCalledWith(url)
         })
     })
 
@@ -43,14 +36,7 @@ describe('service', () => {
             await service.searchProducts({ accessToken: 'IAmAToken', product: 'IAmAProduct' })
 
             const url = `${BASE_URL}sites/${SITE_ID}/search?q=IAmAProduct`
-
-            expect(global.fetch).toHaveBeenCalledWith(url, {
-                method: 'GET',
-                headers: {
-                    Authorization: 'Bearer IAmAToken',
-                    'Content-type': 'application/json',
-                },
-            })
+            expect(global.fetch).toHaveBeenCalledWith(url)
         })
     })
 })

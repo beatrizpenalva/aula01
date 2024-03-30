@@ -1,11 +1,9 @@
 import { errorHandler } from './utils/helpers'
-import firebase from './firebase'
 import service from './service'
 
 const getDetails = async ({ productId }) => {
     try {
-        const { accessToken } = await firebase.getAccessToken()
-        const data = await service.getProductDetails({ accessToken, productId })
+        const data = await service.getProductDetails({ productId })
         return data
     } catch (error) {
         errorHandler(error)
@@ -14,8 +12,7 @@ const getDetails = async ({ productId }) => {
 
 const getProducts = async ({ product }) => {
     try {
-        const { accessToken } = await firebase.getAccessToken()
-        const data = await service.searchProducts({ accessToken, product })
+        const data = await service.searchProducts({ product })
         const { results } = data
         return results
     } catch (error) {

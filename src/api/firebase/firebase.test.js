@@ -8,43 +8,6 @@ const error = 'ImAnError'
 const refreshToken = 'IAmARefreshToken'
 
 describe('firebase', () => {
-    describe('getAccessToken', () => {
-        let where
-        let get
-
-        beforeEach(() => {
-            get = jest.fn(() => accessToken)
-            where = jest.fn(() => ({ get }))
-
-            Firestore.collection = jest.fn()
-            Firestore.getDocs = jest.fn(() => ({ where }))
-        })
-
-        test('calls api with properly params and return access token', async () => {
-            const result = await firebase.getAccessToken()
-
-            expect(Firestore.collection).toHaveBeenCalledWith('tokens')
-            expect(Firestore.getDocs).toHaveBeenCalledWith(Firestore.collection('tokens'))
-            expect(where).toHaveBeenCalledWith('accessToken')
-            expect(get).toHaveBeenCalled()
-            expect(result).toEqual({ accessToken })
-        })
-
-        test('return error when request fails', async () => {
-            Firestore.getDocs.mockRejectedValueOnce(error)
-
-            const result = await firebase.getAccessToken()
-
-            expect(Firestore.collection).toHaveBeenCalledWith('tokens')
-            expect(Firestore.getDocs).toHaveBeenCalledWith(Firestore.collection('tokens'))
-
-            expect(where).not.toHaveBeenCalled()
-            expect(get).not.toHaveBeenCalled()
-
-            expect(result).toEqual(error)
-        })
-    })
-
     describe('getRefreshToken', () => {
         let where
         let get
