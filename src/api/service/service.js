@@ -21,7 +21,7 @@ const createNewRefreshToken = ({ lastRefreshToken }) => {
 }
 
 const getProductDetails = async ({ accessToken, productId }) => {
-    const url = `${BASE_URL}items/${productId}`
+    const url = `${BASE_URL}items/${productId}?include_attributes=all`
 
     const data = await fetch(url, {
         method: 'GET',

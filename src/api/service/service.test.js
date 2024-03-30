@@ -26,7 +26,7 @@ describe('service', () => {
         test('call fetch with properly url, headers and method', async () => {
             await service.getProductDetails({ accessToken: 'IAmAToken', productId: 'IAmAnId' })
 
-            const url = `${BASE_URL}items/IAmAnId`
+            const url = `${BASE_URL}items/IAmAnId?include_attributes=all`
 
             expect(global.fetch).toHaveBeenCalledWith(url, {
                 method: 'GET',
