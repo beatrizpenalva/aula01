@@ -6,13 +6,9 @@ import './HomeSearchResultList.styles.css'
 const HomeSearchResultList = ({ product, productsList }) => {
     const navigate = useNavigate()
 
-    const handleViewProductDetails = ({ item, productId }) => {
+    const handleViewProductDetails = ({ productId }) => {
         const url = getProductDetailsUrl(productId)
-        navigate(url, {
-            state: {
-                item
-            },
-        })
+        navigate(url)
     }
 
     return (
@@ -21,7 +17,7 @@ const HomeSearchResultList = ({ product, productsList }) => {
             {productsList.map((item, index) => (
                 <CardProduct
                     key={`${index}-${item.id}`}
-                    onClick={() => handleViewProductDetails({ item, productId: item.id })}
+                    onClick={() => handleViewProductDetails({ productId: item.id })}
                     product={item}
                 />
             ))}

@@ -8,7 +8,7 @@ const useSearchProducts = () => {
 
     const isEmpty = !productsList.length
 
-    const getProductsAvailable = async (product) => {
+    const getProductsAvailable = async product => {
         setIsLoading(true)
         try {
             const data = await api.getProducts({ product })
