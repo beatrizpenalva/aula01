@@ -1,12 +1,14 @@
 import { createNewRefreshToken, getProductDetails, searchProducts, BASE_URL, SITE_ID, TOKEN_URL } from './service'
 
 describe('service', () => {
+    beforeEach(() => {
+        global.fetch = jest.fn(() => Promise.resolve({
+            json: () => Promise.resolve()
+        }))
+    })
+
     describe('createNewRefreshToken', () => {
         test('call fetch with properly url, headers, method and body', async () => {
-            global.fetch = jest.fn(() => Promise.resolve({
-                json: () => Promise.resolve()
-            }))
-
             await createNewRefreshToken({ lastRefreshToken: 'IAmAToken' })
 
             expect(global.fetch).toHaveBeenCalledWith(TOKEN_URL, {
@@ -22,10 +24,6 @@ describe('service', () => {
 
     describe('getProductDetails', () => {
         test('call fetch with properly url, headers and method', async () => {
-            global.fetch = jest.fn(() => Promise.resolve({
-                json: () => Promise.resolve()
-            }))
-
             await getProductDetails({ accessToken: 'IAmAToken', productId: 'IAmAnId' })
 
             const url = `${BASE_URL}items/IAmAnId`
@@ -42,10 +40,6 @@ describe('service', () => {
 
     describe('searchProducts', () => {
         test('call fetch with properly url, headers and method', async () => {
-            global.fetch = jest.fn(() => Promise.resolve({
-                json: () => Promise.resolve()
-            }))
-
             await searchProducts({ accessToken: 'IAmAToken', product: 'IAmAProduct' })
 
             const url = `${BASE_URL}sites/${SITE_ID}/search?q=IAmAProduct`
