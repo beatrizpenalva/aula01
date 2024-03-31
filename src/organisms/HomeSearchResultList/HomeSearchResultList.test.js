@@ -20,9 +20,10 @@ describe('HomeSearchResultList', () => {
         const SampleWrapper = composeStory(Sample, Meta)
         render(<SampleWrapper />)
 
-        userEvent.click(screen.getByRole('button', { name: 'Ver detalhes de Samsung Galaxy Folder 2 Dual SIM 16 GB Negro 2 GB RAM' }))
+        userEvent.click(screen.getByRole('button', { name: 'Ver detalhes de Samsung Galaxy A14 128gb 4gb Ram Verde Lima Cor Green' }))
 
-        const url = getProductDetailsUrl('MLA13316403')
+        const url = getProductDetailsUrl('MLB3683074512')
+
         expect(navigate).toHaveBeenCalledWith(url)
     })
 })
