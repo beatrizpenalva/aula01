@@ -1,0 +1,12 @@
+.stamp-container {
+    background-color: #0d3b66;
+    border-radius: 4px;
+    padding: 4px 8px;
+    display: flex;
+    gap: 4px;
+}
+
+.stamp-text {
+    text-transform: capitalize;
+    color: white;
+}
