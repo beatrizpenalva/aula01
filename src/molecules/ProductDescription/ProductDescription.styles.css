@@ -1,0 +1,38 @@
+.conditions-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 4px;
+}
+
+.description-container {
+    border-color: #e0e2e5;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    padding: 16px;
+    flex: 2;
+}
+
+.description-container-skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.price-conditions-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sale-term-container {
+    margin-bottom: 16px;
+}
+
+.sale-term-info {
+    margin-left: 12px;
+}
+
+.subsection-title {
+    margin-bottom: 16px;
+}
