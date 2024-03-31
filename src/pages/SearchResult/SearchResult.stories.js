@@ -1,5 +1,9 @@
 import { RouterProvider, createMemoryRouter } from 'react-router-dom'
 import SearchResult from './SearchResult'
+import searchProductsResponse from '../../api/service/fixtures/searchProductsResponse'
+import { getSearchProductsUrl } from '../../api/service/service'
+
+const product = 'Celular'
 
 const routes = [
     {
@@ -9,7 +13,7 @@ const routes = [
 ]
 
 const router = createMemoryRouter(routes, {
-    initialEntries: ['/result/423423423'],
+    initialEntries: [`/result/${product}`],
     initialIndex: 1,
 })
 
@@ -24,6 +28,17 @@ export default {
     },
 }
 
-export const Sample = {
-    args: {},
+const Template = args => <BaseComponent {...args} />
+
+export const Sample = Template.bind({})
+Sample.parameters = {
+    mockData: [
+        {
+            url: getSearchProductsUrl(product),
+            method: 'GET',
+            status: 200,
+            response: searchProductsResponse,
+            delay: 500,
+        },
+    ]
 }
