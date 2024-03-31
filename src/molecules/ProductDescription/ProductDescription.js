@@ -22,7 +22,6 @@ const LoadingState = () => (
     </section>
 )
 
-// TODO: Adjust style if has not sale price
 const ProductDescription = ({
     isAvailable,
     isFreeShipping,
@@ -56,7 +55,7 @@ const ProductDescription = ({
                         </Typography>
                     </div>
                 </div>
-                {saleTerms.length && (
+                {Boolean(saleTerms.length) && (
                     <>
                         <hr aria-hidden className='divider' />
                         <Typography

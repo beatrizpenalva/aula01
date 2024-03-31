@@ -53,10 +53,14 @@ export const Sample = {
 }
 
 export const WithoutExtraInfo = {
-    ...defaultProps,
+    args: {
+        ...defaultProps,
+    }
 }
 
 export const Loading = {
-    ...defaultProps,
-    isLoading: true,
+    args: {
+        ...defaultProps,
+        isLoading: true,
+    }
 }
