@@ -59,11 +59,8 @@ CardProduct.propTypes = {
     onClick: PropTypes.func.isRequired,
     product: PropTypes.shape({
         official_store_name: PropTypes.string.isRequired,
-        original_price: PropTypes.string.isRequired,
-        price: PropTypes.string,
-        seller: PropTypes.shape({
-            nickname: PropTypes.string,
-        }),
+        original_price: PropTypes.number.isRequired,
+        price: PropTypes.number,
         shipping: PropTypes.shape({
             free_shipping: PropTypes.bool.isRequired
         }).isRequired,
