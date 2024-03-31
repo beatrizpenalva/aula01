@@ -3,7 +3,7 @@ import Typography from '../../atoms/Typography'
 
 const HomeInitialState = () => (
     <FeedbackWrapper>
-        <Typography component='h2' variant='subtitle-medium'>
+        <Typography component='h2' variant='subtitle-bold'>
             Nada a ser exibido
         </Typography>
         <Typography>
