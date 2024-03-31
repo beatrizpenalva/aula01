@@ -1,4 +1,4 @@
-<h1 align="center" id="top"> Meli busca rápida </h1>
+<h1 align="center" id="top"> 🛒 Meli busca rápida </h1>
 
 <p align="center">
   A website to search for products on Meli catalog and see their details 
