@@ -28,3 +28,15 @@ ul {
 button {
     border: none;
 }
+
+:root {
+    --brand-primary: #f4d35e;
+    --dark-blue: #0d3b66;
+    --light-gray: #eceff3;
+    --gray: #efefef;
+    --status-negative: #9e2626;
+    --white: white;
+    --shadow: 1px 2px 3px 0px #00000040;
+    --border-radius: 4px;
+    --border-radius-sm: 2px;
+}

@@ -7,16 +7,16 @@ label>.radio-image {
 }
 
 .radio-image {
-    border-color: #e0e2e5;
+    border-color: var(--gray);
     border-style: solid;
     border-width: 1px;
-    border-radius: 2px;
+    border-radius: --border-radius-sm;
     padding: 4px;
     width: 48px;
 }
 
 .radio-image:hover,
 .radio-image-checked {
-    border-color: #0d3b66;
+    border-color: var(--dark-blue);
     border-width: 2px;
 }

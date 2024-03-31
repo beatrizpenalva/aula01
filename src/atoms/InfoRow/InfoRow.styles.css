@@ -9,5 +9,5 @@
 }
 
 .colored {
-    background-color: #eceff3;
+    background-color: var(--light-gray);
 }

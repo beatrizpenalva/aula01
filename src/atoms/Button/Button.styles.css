@@ -1,8 +1,8 @@
 .primary-button {
-    background-color: #0d3b66;
+    background-color: var(--dark-blue);
     border-color: transparent;
-    border-radius: 4px;
-    color: white;
+    border-radius: var(--border-radius);
+    color: var(--white);
     padding: 8px;
 }
 
@@ -12,23 +12,23 @@
 }
 
 .secondary-button {
-    border-color: #0d3b66;
-    border-radius: 4px;
-    color: #0d3b66;
+    border-color: var(--dark-blue);
+    border-radius: var(--border-radius);
+    color: var(--dark-blue);
     padding: 8px;
     border-width: 2px;
     border-style: solid;
 }
 
 .secondary-button:hover {
-    background-color: #0d3b66;
-    color: white;
+    background-color: var(--dark-blue);
+    color: var(--white);
 }
 
 .warning-button {
-    background-color: #9e2626;
+    background-color: var(--status-negative);
     border-color: transparent;
-    border-radius: 4px;
-    color: white;
+    border-radius: var(--border-radius);
+    color: var(--white);
     padding: 8px;
 }

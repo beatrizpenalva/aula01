@@ -1,18 +1,18 @@
 .no-pictures-container {
-    background-color: #efefef;
+    background-color: var(--gray);
     height: -webkit-fill-available;
     display: block;
     width: 100%;
     padding: 8px;
     margin: 8px;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
 }
 
 .no-pictures-container-with-border {
-    border-color: #0d3b66;
+    border-color: var(--dark-blue);
     border-style: solid;
     border-width: 1px;
-    border-radius: 2px;
+    border-radius: var(--border-radius-sm);
 }
 
 .no-pictures-icon {

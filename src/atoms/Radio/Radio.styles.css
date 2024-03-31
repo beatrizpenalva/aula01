@@ -9,10 +9,10 @@
 .radio-input-container {
     display: flex;
     align-items: center;
-    border-color: #0d3b66;
-    color: #0d3b66;
+    border-color: var(--dark-blue);
+    color: var(--dark-blue);
     padding: 4px 8px;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     cursor: pointer;
     border-width: 2px;
     border-style: solid;
@@ -22,13 +22,13 @@
 }
 
 .radio-input-container:hover {
-    background-color: #0d3b664d;
+    background-color: var(--dark-blue)4d;
 }
 
 .radio-checked {
-    background-color: #0d3b66;
+    background-color: var(--dark-blue);
 }
 
 .radio-checked label {
-    color: white;
+    color: var(--white);
 }
