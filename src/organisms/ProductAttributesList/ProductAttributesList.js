@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import InfoRow from '../../atoms/InfoRow'
 import Skeleton from '../../atoms/Skeleton'
+import Typography from '../../atoms/Typography'
 import './ProductAttributesList.styles.css'
 
 const LoadingState = () => (
@@ -16,7 +17,9 @@ const ProductAttributesList = ({ attributes, isLoading }) => (
         {isLoading ? <LoadingState />
             : (
                 <>
-                    <h6 className='subsection-title'>Ficha técnica:</h6>
+                    <Typography component='h6' className='subsection-title' variant='subtitle-medium '>
+                        Ficha técnica:
+                    </Typography>
                     {attributes.map(({ id, name, value_name }, index) => {
                         const isEven = index % 2 === 0
 

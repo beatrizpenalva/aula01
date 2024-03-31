@@ -1,12 +1,17 @@
 import PropTypes from 'prop-types'
 import Button from '../../atoms/Button'
 import FeedbackWrapper from '../../templates/FeedbackWrapper'
+import Typography from '../../atoms/Typography'
 import './ErrorState.styles.css'
 
 const ErrorState = ({ description, onTryAgain }) => (
     <FeedbackWrapper>
-        <h2>Ocorreu um erro</h2>
-        <p className='error-text'>{description}</p>
+        <Typography component='h2' variant='subtitle-bold'>
+            Ocorreu um erro
+        </Typography>
+        <Typography className='error-text'>
+            {description}
+        </Typography>
         <Button onClick={onTryAgain} variant="warning">Tentar novamente</Button>
     </FeedbackWrapper>
 )

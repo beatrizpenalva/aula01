@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import CardProduct from '../../molecules/CardProduct'
+import Typography from '../../atoms/Typography'
 import { getProductDetailsUrl } from '../../utils/helpers'
 import './HomeSearchResultList.styles.css'
 
@@ -13,7 +14,10 @@ const HomeSearchResultList = ({ product, productsList }) => {
 
     return (
         <main className="list-products-container">
-            <h2 className='subsection-title'>Resultado da busca para: {product}</h2>
+            <Typography component='h2' variant='subtitle-regular' className='subsection-title'>
+                Resultado da busca para:
+                <Typography component='span' variant='subtitle-medium'>{product}</Typography>
+            </Typography>
             {productsList.map((item, index) => (
                 <CardProduct
                     key={`${index}-${item.id}`}

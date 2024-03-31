@@ -1,9 +1,14 @@
 import FeedbackWrapper from '../../templates/FeedbackWrapper'
+import Typography from '../../atoms/Typography'
 
 const HomeInitialState = () => (
     <FeedbackWrapper>
-        <h2>Nada a ser exibido</h2>
-        <p>Você ainda não procurou por nada, nos diga o que procura, por favor.</p>
+        <Typography component='h2' variant='subtitle-medium'>
+            Nada a ser exibido
+        </Typography>
+        <Typography>
+            Você ainda não procurou por nada, nos diga o que procura, por favor.
+        </Typography>
     </FeedbackWrapper>
 )
 

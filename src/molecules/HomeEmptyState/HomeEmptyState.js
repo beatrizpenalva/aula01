@@ -1,10 +1,15 @@
 import PropTypes from 'prop-types'
 import FeedbackWrapper from '../../templates/FeedbackWrapper'
+import Typography from '../../atoms/Typography/Typography'
 
 const HomeEmptyState = ({ product }) => (
     <FeedbackWrapper>
-        <h2>Item não encontrado</h2>
-        <p>Não encontramos nenhum item correspondente a sua busca por <b>{product}</b>.</p>
+        <Typography component='h2' variant='subtitle-bold'>
+            Item não encontrado
+        </Typography>
+        <Typography>
+            Não encontramos nenhum item correspondente a sua busca por <b>{product}</b>.
+        </Typography>
     </FeedbackWrapper>
 )
 

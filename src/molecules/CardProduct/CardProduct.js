@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
 import NoPicturesPlaceholder from '../../atoms/NoPicturesPlaceholder'
 import Stamp from '../../atoms/Stamp'
-import './CardProduct.styles.css'
+import Typography from '../../atoms/Typography'
 import { formatCurrency } from '../../utils/helpers'
+import './CardProduct.styles.css'
 
 // TODO: Adjust style if has not sale price
 const CardProduct = ({ onClick, product }) => {
@@ -36,11 +37,17 @@ const CardProduct = ({ onClick, product }) => {
                 <NoPicturesPlaceholder size='64px' />
             )}
             <div className="card-second-column">
-                <p>{title}</p>
-                <p>Por {official_store_name || nickname}</p>
+                <Typography variant='paragraph-large-medium'>{title}</Typography>
+                <Typography variant='paragraph-xsmall-regular'>
+                    Por {official_store_name || nickname}
+                </Typography>
                 <div className='card-price-line'>
-                    <p><b>{formatCurrency(price)}</b></p>
-                    <p>{formatCurrency(original_price)}</p>
+                    <Typography variant='subtitle-medium'>
+                        {formatCurrency(price)}
+                    </Typography>
+                    <Typography variant='paragraph-sm-regular-erased'>
+                        {formatCurrency(original_price)}
+                    </Typography>
                 </div>
                 {free_shipping && <Stamp text='Frete grátis' />}
             </div>

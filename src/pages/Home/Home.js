@@ -1,11 +1,16 @@
 import FeedbackWrapper from '../../templates/FeedbackWrapper'
 import PageWrapper from '../../templates/PageWrapper'
+import Typography from '../../atoms/Typography'
 
 const Home = () => (
     <PageWrapper >
         <FeedbackWrapper>
-            <h2>Nada a ser exibido</h2>
-            <p>Você ainda não procurou por nada, nos diga o que procura, por favor.</p>
+            <Typography component='h2' variant='subtitle-bold'>
+                Nada a ser exibido
+            </Typography>
+            <Typography>
+                Você ainda não procurou por nada, nos diga o que procura, por favor.
+            </Typography>
         </FeedbackWrapper>
     </PageWrapper>
 )
