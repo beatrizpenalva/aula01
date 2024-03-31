@@ -2,11 +2,12 @@ import PropTypes from 'prop-types'
 import ListItem from '../../atoms/ListItem'
 import Skeleton from '../../atoms/Skeleton'
 import Stamp from '../../atoms/Stamp'
+import './ProductDescription.styles.css'
 import { formatCurrency } from '../../utils/helpers'
 
 const LoadingState = () => (
     <section className='description-container'>
-        <Skeleton height='32px' />
+        <Skeleton height='20px' />
         <ul className='description-container-skeleton'>
             <Skeleton height='16px' />
             <Skeleton height='16px' />
@@ -41,9 +42,9 @@ const ProductDescription = ({
                     </div>
                     <h3>{title}</h3>
                     <div className='price-conditions-container'>
+                        {isFreeShipping && <p>Frete grátis</p>}
                         <p>{formatCurrency(value)}</p>
                         <h4>{formatCurrency(salePrice)}</h4>
-                        {isFreeShipping && <p>Frete grátis</p>}
                     </div>
                 </div>
                 {saleTerms.length && (

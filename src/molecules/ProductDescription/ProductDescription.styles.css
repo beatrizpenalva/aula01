@@ -1,7 +1,7 @@
 .conditions-container {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
     gap: 4px;
 }
 
@@ -12,6 +12,7 @@
     border-radius: 4px;
     padding: 16px;
     flex: 2;
+    min-width: 240px;
 }
 
 .description-container-skeleton {
@@ -23,6 +24,8 @@
 .price-conditions-container {
     display: flex;
     flex-direction: column;
+    margin: 24px 0px;
+    gap: 8px;
 }
 
 .sale-term-container {
