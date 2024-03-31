@@ -10,9 +10,8 @@ const preview = {
       },
     },
     mockAddonConfigs: {
-      globalMockData: [{
-        disable: false,
-      }],
+      globalMockData: [],
+      ignoreQueryParams: false,
     }
   },
 };

@@ -5,6 +5,8 @@ export const SITE_ID = 'MLB'
 export const BASE_URL = 'https://api.mercadolibre.com/'
 export const TOKEN_URL = `${BASE_URL}oauth/token`
 
+export const getProductDetailsUrl = productId => `${BASE_URL}items/${productId}?include_attributes=all`
+
 const createNewRefreshToken = ({ lastRefreshToken }) => {
     const body = `grant_type=refresh_token&client_id=${CLIENT_ID}&client_secret=${CLIENT_KEY}&refresh_token=${lastRefreshToken}`
 
@@ -21,8 +23,7 @@ const createNewRefreshToken = ({ lastRefreshToken }) => {
 }
 
 const getProductDetails = async ({ productId }) => {
-    const url = `${BASE_URL}items/${productId}?include_attributes=all`
-
+    const url = getProductDetailsUrl(productId)
     const data = await fetch(url).then(response => response.json())
     return data
 }
