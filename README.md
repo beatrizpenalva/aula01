@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+<h1 align="center" id="top"> Meli busca rápida </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  A website to search for products on Meli catalog and see their details 
+  <br>
+  ⚡ To access click <a href="https://meli-busca-rapida.vercel.app/result">here</a>! ⚡  
+</p>
 
-## Available Scripts
+## 💻 Development decisions
+### ⚙️ Technologies
+I have chosen to use ReactJS, because it is the lib that I work with and have familiarity. If I need to use Vanilla JS, probably I had spend a lot of time developing.
 
-In the project directory, you can run:
+For documentation, I worked with Storybook, that is also helpful for unit tests, with Jest and Testing Libreary, because I used them as a mock component.
 
-### `npm start`
+### 📋 State management
+For state management I did not use any lib, since useState from ReactJS it covered all my app demand. But, since I had to save the refresh token given by the API, I created an app using Firebase Database, to save the information but not leave it exposed on the browser. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I could have created a BFF (BackEnd for FrontEnd) application, but Firebase gave me what I needed with a much faster development.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🧩 Modularization
+This project is structured based on Atomic Design patterns, since it is useful for components modularization. 
 
-### `npm test`
+In Atomic Design, we separate components in atoms, molecules, organisms, pages and templates. The atoms part it is the part that is not divisible, molecules it is atoms grouped, organisms it is molecules grouped but with more complexity and logic and pages, well, that are pages. To know more about it you can [click here](https://atomicdesign.bradfrost.com/chapter-2/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To separate the API requests and render logic from the view layer, I have created custom hooks to attend the specifities of each page. This way, the code it is more readable and it is easier to test. 
 
-### `npm run build`
+## 📂 Folders structures
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```text
+.
+├── src
+|  ├── pages
+|  |  └── ComponentName
+|  |  |  └── index.js
+|  |  |  └── ComponentName.js
+|  |  |  └── ComponentName.stories.js
+|  |  |  └── ComponentName.test.js
+|  |  |  └── ComponentName.styles.css
+|  ├── organisms
+|  |  └── [...ComponentName structure]
+|  ├── molecules
+|  |  └── [...ComponentName structure]
+|  ├── atoms
+|  |  └── [...ComponentName structure]
+|  ├── templates
+|  |  └── [...ComponentName structure]
+|  ├── hooks
+|  |  └── useMyHook.js
+|  |  └── useMyHook.test.js
+|  ├── utils
+|  |  └── constants.js
+|  |  └── helpers.js
+|  |  └── helpers.test.js
+|  ├── api/
+|  |  └── index.js
+|  |  └── api.js
+|  |  └── api.test.js
+|  |  └── firebase/
+|  |  |  └── index.js
+|  |  |  └── firebase.js
+|  |  |  └── firebase.test.js
+|  |  |  └── firebaseConfig.js
+|  |  └── service
+|  |  |  └── index.js
+|  |  |  └── service.js
+|  |  |  └── service.test.js
+|  |  |  └── fixtures.js
+|  |  |  |  └── mockResponse.js
+|  |  └── utils
+|  |  |  |  └── helpers.js
+|  |  |  |  └── helpers.test.js
+|  ├── assets
+|  |  └── myAsset.js
+|  ├── index.js
+|  ├── routes.js
+|  └── style.css
+└──
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+## 🚀 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🦸 Running the app
 
-### `npm run eject`
+Before running the app, install on your computer: Git and NodeJS.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Fork the repository
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# To clone this repository on your computer run:
+$ git clone https://github.com/beatrizpenalva/teste-tecnico-meli.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# To install the dependencies in your project's directory run:
+$ npm install
 
-## Learn More
+# To execute the app on development mode run:
+$ npm run start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# The app will be open on port:3000 - access http://localhost:3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# To execute the storybook run:
+$ npm run storybook
 
-### Code Splitting
+# To execute tests run:
+$ npm run test 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+### 👊 To contribute
 
-### Analyzing the Bundle Size
+```bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# After installing the repository on your computer, create a new branch with your updates:
+$ git checkout -b my-feature
 
-### Making a Progressive Web App
+# Save your changes
+$ git add .
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Create a commit message telling what you did: 
+$ git commit -m "feature: My new feature"
 
-### Advanced Configuration
+# Send your contribution to this repository
+$ git push origin my-feature
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
