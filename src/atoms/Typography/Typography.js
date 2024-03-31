@@ -33,7 +33,7 @@ Typography.propTypes = {
 
 Typography.defaultProps = {
     className: '',
-    component: 'p',
+    component: 'paragraph',
     variant: 'paragraph-lg-regular',
 }
 
