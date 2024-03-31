@@ -1,54 +1,21 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
-// import ListItem from '../../atoms/ListItem'
 import ProductAttributesList from '../ProductAttributesList'
-import ProductAttributesPickers from '../ProductAttributesPickers'
+import ProductDescription from '../../molecules/ProductDescription'
 import ProductImagesContainer from '../ProductImagesContainer'
-// import Skeleton from '../../atoms/Skeleton'
 import './ProductDetails.styles.css'
 
-// const FeaturesLoadingState = () => (
-//     <section className='features-container'>
-//         <Skeleton height='32px' />
-//         <ul className='features-container-skeleton'>
-//             <Skeleton height='16px' />
-//             <Skeleton height='16px' />
-//             <Skeleton height='16px' />
-//             <Skeleton height='16px' />
-//             <Skeleton height='16px' />
-//             <Skeleton height='16px' />
-//             <Skeleton height='16px' />
-//             <Skeleton height='16px' />
-//         </ul>
-//     </section>
-// )
-
-// to get short_description it is needed to make a request
-
 const ProductDetails = ({ details, isLoading }) => {
-    const [checkedPickers, setCheckedPickers] = useState([])
-
     const {
         attributes,
         condition,
-        installments,
         original_price,
-        sale_price,
-        seller,
+        pictures,
+        price,
         shipping,
         title,
-        value,
-        pickers,
-        pictures,
+        sale_terms,
+        buying_mode,
     } = details
-
-    console.log({ condition, installments, original_price, sale_price, seller, shipping, value })
-
-    const handleChangePicker = ({ category, value }) => {
-        const pickersNotChanged = checkedPickers.filter((item) => item.category !== category)
-        const newPickersSelected = [...pickersNotChanged, { category, value }]
-        setCheckedPickers(newPickersSelected)
-    }
 
     return (
         <main className='product-content-container'>
@@ -58,31 +25,17 @@ const ProductDetails = ({ details, isLoading }) => {
                     pictures={pictures}
                     aria-hidden
                 />
-                {pickers.length && (
-                    <ProductAttributesPickers
-                        checkedPickers={checkedPickers}
-                        isLoading={isLoading}
-                        onChange={handleChangePicker}
-                        pickers={pickers}
-                        productName={title}
-                    />
-                )}
-                {/* {isLoading ? <FeaturesLoadingState /> : (
-                    <section className='features-container'>
-                        <h4 className='subsection-title'>O que você precisa saber sobre este produto:</h4>
-                        <ul>
-                            {main_features.map(({ text, type }) => (
-                                <ListItem key={type} showMarker>{text}</ListItem>
-                            ))}
-                        </ul>
-                    </section>
-                )} */}
+                <ProductDescription
+                    isAvailable={buying_mode === 'buy_it_now'}
+                    isFreeShipping={shipping?.free_shipping}
+                    isLoading={isLoading}
+                    isNew={condition === 'new'}
+                    salePrice={price}
+                    saleTerms={sale_terms}
+                    title={title}
+                    value={original_price}
+                />
             </section>
-            {/* <hr aria-hidden />
-            <section className='description-container'>
-                {isLoading ? <Skeleton height='24px' /> : (<h5>Descrição:</h5>)}
-                {isLoading ? <Skeleton height='240px' /> : (<p>{short_description?.content}</p>)}
-            </section> */}
             <hr aria-hidden />
             <ProductAttributesList
                 attributes={attributes}
@@ -99,20 +52,21 @@ ProductDetails.propTypes = {
             name: PropTypes.string.isRequired,
             value_name: PropTypes.string.isRequired,
         })),
-        pickers: PropTypes.arrayOf(PropTypes.shape({
-            picker_id: PropTypes.string.isRequired,
-            picker_name: PropTypes.string.isRequired,
-            products: PropTypes.arrayOf(PropTypes.shape({
-                picker_label: PropTypes.string.isRequired,
-                product_id: PropTypes.string.isRequired,
-            })).isRequired,
-        })),
+        buying_mode: PropTypes.string,
+        condition: PropTypes.string,
+        original_price: PropTypes.number.isRequired,
         pictures: PropTypes.arrayOf(PropTypes.shape({
             id: PropTypes.string,
             url: PropTypes.string,
         })),
-        short_description: PropTypes.shape({
-            content: PropTypes.string,
+        price: PropTypes.number,
+        sale_terms: PropTypes.arrayOf(PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+            value_name: PropTypes.string,
+        })),
+        shipping: PropTypes.shape({
+            free_shipping: PropTypes.bool,
         }),
         title: PropTypes.string,
     }).isRequired,

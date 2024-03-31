@@ -1,5 +1,5 @@
 import ProductDetails from './ProductDetails'
-import getProductDetailsResponse from '../../api/fixtures/getProductDetails'
+import getProductDetailsResponse from '../../api/service/fixtures/getProductDetailsResponse'
 
 export default {
     title: 'Organisms/ProductDetails',
@@ -26,6 +26,7 @@ export const Sample = {
 
 export const Loading = {
     args: {
+        details: {},
         isLoading: true,
     },
 }

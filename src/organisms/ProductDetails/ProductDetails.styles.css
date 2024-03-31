@@ -1,25 +1,3 @@
-.description-container {
-    padding: 24px;
-    gap: 16px;
-    display: flex;
-    flex-direction: column;
-}
-
-.features-container {
-    border-color: #e0e2e5;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 4px;
-    padding: 16px;
-    flex: 2;
-}
-
-.features-container-skeleton {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
 .product-content-container {
     display: flex;
     flex-direction: column;
@@ -33,8 +11,4 @@
     margin: 24px 0px;
     border-radius: 4px;
     gap: 24px;
-}
-
-.subsection-title {
-    margin-bottom: 16px;
 }

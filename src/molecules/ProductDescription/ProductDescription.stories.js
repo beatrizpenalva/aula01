@@ -37,9 +37,9 @@ export default {
 }
 
 const defaultProps = {
-    salePrice: '400.00',
+    salePrice: 400,
     title: 'Produto XPTO',
-    value: '600.00',
+    value: 600,
 }
 
 export const Sample = {
