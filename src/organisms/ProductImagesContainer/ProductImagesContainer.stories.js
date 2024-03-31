@@ -1,5 +1,5 @@
 import ProductImagesContainer from './ProductImagesContainer'
-import getProductDetailsResponse from '../../api/fixtures/getProductDetails'
+import getProductDetailsResponse from '../../api/service/fixtures/getProductDetailsResponse'
 
 export default {
     title: 'Organisms/ProductImagesContainer',

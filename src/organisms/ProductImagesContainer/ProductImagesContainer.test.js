@@ -36,6 +36,6 @@ describe('ProductImagesContainer', () => {
         const allImages = screen.getAllByRole('img')
         const mainImage = allImages[allImages.length - 1]
 
-        expect(mainImage).toHaveAttribute('src', 'https://mla-s2-p.mlstatic.com/777713-MLA32660788040_102019-F.jpg')
+        expect(mainImage).toHaveAttribute('src', 'http://http2.mlstatic.com/D_693049-MLU75408855721_032024-O.jpg')
     })
 })
