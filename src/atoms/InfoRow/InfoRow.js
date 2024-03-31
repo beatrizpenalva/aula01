@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import Typography from '../Typography'
 import './InfoRow.styles.css'
 
 const InfoRow = ({ colored, label, value }) => (
@@ -6,8 +7,12 @@ const InfoRow = ({ colored, label, value }) => (
         {!Boolean(value) ? null : (
             <>
                 <div className={`row${colored ? ' colored' : ''}`} data-testid='info-row'>
-                    <p><b>{label}</b></p>
-                    <p>{value}</p>
+                    <Typography variant='paragraph-sm-medium'>
+                        {label}
+                    </Typography>
+                    <Typography variant='paragraph-sm-regular'>
+                        {value}
+                    </Typography>
                 </div>
             </>
         )}
