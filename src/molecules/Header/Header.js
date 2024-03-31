@@ -1,12 +1,18 @@
 import PropTypes from 'prop-types'
 import SearchInput from '../../atoms/SearchInput'
+import Typography from '../../atoms/Typography'
 import './Header.styles.css'
 
 const Header = ({ onSearch }) => {
     return (
         <header>
-            <h1>Meli busca rápida!</h1>
-            <SearchInput ariaLabel="Pesquisar pelo produto" onClick={onSearch} />
+            <Typography component='h1' variant='subtitle-bold'>
+                Meli busca rápida!
+            </Typography>
+            <SearchInput
+                ariaLabel="Pesquisar pelo produto"
+                onClick={onSearch}
+            />
         </header>
     )
 }

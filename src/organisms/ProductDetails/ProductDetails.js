@@ -36,7 +36,7 @@ const ProductDetails = ({ details, isLoading }) => {
                     value={original_price}
                 />
             </section>
-            <hr aria-hidden />
+            <hr className='divider' aria-hidden />
             <ProductAttributesList
                 attributes={attributes}
                 isLoading={isLoading}

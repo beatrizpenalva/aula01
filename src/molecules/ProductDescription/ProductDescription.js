@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import ListItem from '../../atoms/ListItem'
 import Skeleton from '../../atoms/Skeleton'
 import Stamp from '../../atoms/Stamp'
+import Typography from '../../atoms/Typography'
 import './ProductDescription.styles.css'
 import { formatCurrency } from '../../utils/helpers'
 
@@ -40,21 +41,42 @@ const ProductDescription = ({
                         {isNew && <Stamp text='Novo' />}
                         {isAvailable && <Stamp text='Compre agora' />}
                     </div>
-                    <h3>{title}</h3>
+                    <Typography component='h3' variant='subtitle-medium'>{title}</Typography>
                     <div className='price-conditions-container'>
-                        {isFreeShipping && <p>Frete grátis</p>}
-                        <p>{formatCurrency(value)}</p>
-                        <h4>{formatCurrency(salePrice)}</h4>
+                        {isFreeShipping && (
+                            <Typography className='shipping-text' variant='paragraph-large-medium'>
+                                Frete grátis
+                            </Typography>
+                        )}
+                        <Typography variant='paragraph-sm-regular-erased'>
+                            {formatCurrency(value)}
+                        </Typography>
+                        <Typography component='h4' variant='subtitle-medium'>
+                            {formatCurrency(salePrice)}
+                        </Typography>
                     </div>
                 </div>
                 {saleTerms.length && (
                     <>
-                        <h5 className='subsection-title'>O que você precisa saber sobre este produto:</h5>
+                        <hr aria-hidden className='divider' />
+                        <Typography
+                            component='h5'
+                            className='subsection-title'
+                            variant='paragraph-large-medium'
+                        >
+                            O que você precisa saber sobre este produto:
+                        </Typography>
                         <ul>
                             {saleTerms.map(({ id, name, value_name }) => (
-                                <div className='sale-term-container'>
-                                    <ListItem key={name} showMarker>{name}</ListItem>
-                                    <p key={id} className='sale-term-info'>{value_name}</p>
+                                <div className='sale-term-container' key={id}>
+                                    <ListItem showMarker>
+                                        <Typography component='span' variant='paragraph-xsmall-regular'>
+                                            {name}
+                                        </Typography>
+                                    </ListItem>
+                                    <Typography className='sale-term-info' variant='paragraph-sm-regular'>
+                                        {value_name}
+                                    </Typography>
                                 </div>
                             ))}
                         </ul>

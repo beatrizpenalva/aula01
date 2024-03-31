@@ -1,7 +1,12 @@
+.divider {
+    opacity: 30%;
+    margin: 16px 0;
+}
+
 .product-content-container {
     display: flex;
     flex-direction: column;
-    padding: 40px 5vw;
+    padding: 40px 15vw;
 }
 
 .product-info-container {
