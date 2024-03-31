@@ -9,6 +9,11 @@ const preview = {
         date: /Date$/i,
       },
     },
+    mockAddonConfigs: {
+      globalMockData: [{
+        disable: false,
+      }],
+    }
   },
 };
 
