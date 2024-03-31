@@ -1,9 +1,14 @@
 import ProductAttributesList from './ProductAttributesList'
-import getProductDetailsResponse from '../../api/fixtures/getProductDetails'
+import searchProductsResponse from '../../api/service/fixtures/searchProductsResponse'
 
 export default {
     title: 'Organisms/ProductAttributesList',
     component: ProductAttributesList,
+    decorators: [Story => (
+        <div style={{ width: '800px' }}>
+            <Story />
+        </div>
+    )],
     tags: ['autodocs'],
     parameters: {
         layout: 'centered',
@@ -20,7 +25,7 @@ export default {
 
 export const Sample = {
     args: {
-        attributes: getProductDetailsResponse.attributes,
+        attributes: searchProductsResponse.results[0].attributes,
     },
 }
 
