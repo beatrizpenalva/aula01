@@ -52,7 +52,7 @@ const ProductImagesContainer = ({ isLoading, pictures }) => {
                                     />
                                 ))}
                             </RadioGroup>
-                            <img src={mainPicture} className='product-image' />
+                            <img src={mainPicture} className='product-image' alt='' aria-hidden />
                         </>
                     )}
                 </>
