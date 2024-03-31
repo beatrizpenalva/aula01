@@ -22,7 +22,7 @@ const useSearchProducts = () => {
 
     return {
         getProductsAvailable,
-        isEmpty: isEmpty && !isError,
+        isEmpty: isEmpty && !isError && !isLoading,
         isError,
         isLoading,
         productsList,
