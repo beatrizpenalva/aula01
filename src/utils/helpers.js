@@ -1,8 +1,10 @@
 export const formatCurrency = (value) => {
+    const numberValue = Number(value ?? 0)
+
     const formatted = new Intl.NumberFormat('pt-BR', {
         style: 'currency',
         currency: 'BRL'
-    }).format(value)
+    }).format(numberValue)
 
     return formatted
 }
