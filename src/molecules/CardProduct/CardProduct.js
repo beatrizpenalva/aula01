@@ -5,13 +5,11 @@ import Typography from '../../atoms/Typography'
 import { formatCurrency } from '../../utils/helpers'
 import './CardProduct.styles.css'
 
-// TODO: Adjust style if has not sale price
 const CardProduct = ({ onClick, product }) => {
     const {
         official_store_name,
         original_price,
         price,
-        seller: { nickname },
         shipping: { free_shipping },
         thumbnail,
         title
@@ -38,9 +36,11 @@ const CardProduct = ({ onClick, product }) => {
             )}
             <div className="card-second-column">
                 <Typography variant='paragraph-large-medium'>{title}</Typography>
-                <Typography variant='paragraph-xsmall-regular'>
-                    Por {official_store_name || nickname}
-                </Typography>
+                {Boolean(official_store_name) && (
+                    <Typography variant='paragraph-xsmall-regular'>
+                        Por {official_store_name}
+                    </Typography>
+                )}
                 <div className='card-price-line'>
                     <Typography variant='subtitle-medium'>
                         {formatCurrency(price)}

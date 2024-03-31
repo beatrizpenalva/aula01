@@ -1,5 +1,5 @@
 import CardProduct from './CardProduct'
-import searchProductsResponse from '../../api/fixtures/searchProducts'
+import searchProductsResponse from '../../api/service/fixtures/searchProductsResponse'
 
 export default {
     title: 'Molecules/CardProduct',
@@ -29,7 +29,11 @@ export const WithoutPictures = {
     args: {
         product: {
             ...searchProductsResponse.results[0],
-            pictures: [],
+            official_store_name: '',
+            shipping: {
+                free_shpping: false,
+            },
+            thumbnail: '',
         },
         onClick: () => { },
     },
