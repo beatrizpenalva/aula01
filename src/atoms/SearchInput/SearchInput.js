@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Button from '../Button'
 import './SearchInput.styles.css'
 
-const SearchInput = ({ ariaLabel, onClick }) => {
+const SearchInput = ({ ariaLabel, onClick, placeholder }) => {
     const [value, setValue] = useState({})
 
     const handleSubmit = () => {
@@ -20,6 +20,7 @@ const SearchInput = ({ ariaLabel, onClick }) => {
                     id="search"
                     name="search"
                     onChange={e => setValue(e)}
+                    placeholder={placeholder}
                 />
                 <Button
                     ariaLabel={ariaLabel}
@@ -36,10 +37,12 @@ const SearchInput = ({ ariaLabel, onClick }) => {
 SearchInput.propTypes = {
     ariaLabel: PropTypes.string,
     onClick: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
 }
 
 SearchInput.defaultProps = {
     ariaLabel: '',
+    placeholder: 'Buscar produtos',
 }
 
 export default SearchInput

@@ -14,6 +14,9 @@ export default {
         onClick: {
             description: 'Callback disparado ao clicar no botão'
         },
+        placeholder: {
+            description: 'Valor a ser exibido no input antes que o usuário digite algo'
+        }
     },
 }
 
