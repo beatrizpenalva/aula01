@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import Button from '../Button'
+import useTranslation from '../../hooks/useTranslation'
 import './SearchInput.styles.css'
 
 const SearchInput = ({ ariaLabel, onClick, placeholder }) => {
+    const { translate } = useTranslation()
+
     const [value, setValue] = useState({})
 
     const handleSubmit = () => {
@@ -13,7 +16,7 @@ const SearchInput = ({ ariaLabel, onClick, placeholder }) => {
 
     return (
         <form onSubmit={e => e.preventDefault()} role="search" className="container">
-            <label htmlFor="search">O que você está buscando?</label>
+            <label htmlFor="search">{translate('searchProductInputLabel')}</label>
             <div className="input-container">
                 <input
                     type="search"
@@ -27,7 +30,7 @@ const SearchInput = ({ ariaLabel, onClick, placeholder }) => {
                     onClick={handleSubmit}
                     type="submit"
                 >
-                    Buscar
+                    {translate('buttonSearch')}
                 </Button>
             </div>
         </form>
@@ -42,7 +45,7 @@ SearchInput.propTypes = {
 
 SearchInput.defaultProps = {
     ariaLabel: '',
-    placeholder: 'Buscar produtos',
+    placeholder: '',
 }
 
 export default SearchInput

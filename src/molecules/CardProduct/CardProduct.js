@@ -2,10 +2,13 @@ import PropTypes from 'prop-types'
 import NoPicturesPlaceholder from '../../atoms/NoPicturesPlaceholder'
 import Stamp from '../../atoms/Stamp'
 import Typography from '../../atoms/Typography'
+import useTranslation from '../../hooks/useTranslation'
 import { formatCurrency } from '../../utils/helpers'
 import './CardProduct.styles.css'
 
 const CardProduct = ({ onClick, product }) => {
+    const { translate } = useTranslation()
+
     const {
         official_store_name,
         original_price,
@@ -20,7 +23,7 @@ const CardProduct = ({ onClick, product }) => {
             type='button'
             onClick={onClick}
             className="card-container"
-            aria-label={`Ver detalhes de ${title}`}
+            aria-label={translate('productSeeDetailsButtonA11y', { product: title })}
         >
             {thumbnail ? (
                 <div className='card-image-wrapper' data-testid='card-image'>
@@ -38,7 +41,7 @@ const CardProduct = ({ onClick, product }) => {
                 <Typography variant='paragraph-large-medium'>{title}</Typography>
                 {Boolean(official_store_name) && (
                     <Typography variant='paragraph-xsmall-regular'>
-                        Por {official_store_name}
+                        {translate('by', { description: official_store_name })}
                     </Typography>
                 )}
                 <div className='card-price-line'>
@@ -49,7 +52,7 @@ const CardProduct = ({ onClick, product }) => {
                         {formatCurrency(original_price)}
                     </Typography>
                 </div>
-                {free_shipping && <Stamp text='Frete grátis' />}
+                {free_shipping && <Stamp text={translate('freeShipping')} />}
             </div>
         </button>
     )

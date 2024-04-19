@@ -7,11 +7,11 @@ import HomeLoadingState from '../../molecules/HomeLoadingState'
 import HomeSearchResultList from '../../organisms/HomeSearchResultList'
 import PageWrapper from '../../templates/PageWrapper'
 import useSearchProducts from '../../hooks/useSearchProducts'
-
-const ERROR_DESCRIPTION = 'Não conseguimos efetuar a busca. Por favor, tente novamente.'
+import useTranslation from '../../hooks/useTranslation'
 
 const SearchResult = () => {
     const { searchId } = useParams()
+    const { translate } = useTranslation()
     const {
         getProductsAvailable,
         isEmpty,
@@ -32,7 +32,7 @@ const SearchResult = () => {
             {!searchId ? (<HomeInitialState />) : (
                 <>
                     {isLoading && <HomeLoadingState />}
-                    {isError && (<ErrorState description={ERROR_DESCRIPTION} onTryAgain={() => getProductsAvailable(searchId)} />)}
+                    {isError && (<ErrorState description={translate('searchResultError')} onTryAgain={() => getProductsAvailable(searchId)} />)}
                     {isEmpty && (<HomeEmptyState product={searchId} />)}
                     {renderContent && (<HomeSearchResultList product={searchId} productsList={productsList} />)}
                 </>

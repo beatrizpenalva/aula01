@@ -4,11 +4,11 @@ import ErrorState from '../../molecules/ErrorState'
 import PageWrapper from '../../templates/PageWrapper'
 import ProductDetails from '../../organisms/ProductDetails'
 import useProductDetails from '../../hooks/useProductDetails'
-
-const ERROR_DESCRIPTION = 'Não conseguimos exibir informações sobre o produto. Por favor, tente novamente.'
+import useTranslation from '../../hooks/useTranslation'
 
 const Product = () => {
     const { productId } = useParams()
+    const { translate } = useTranslation()
     const { details, getProductDetails, isError, isLoading } = useProductDetails({ productId })
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const Product = () => {
     return (
         <PageWrapper>
             {isError ?
-                <ErrorState description={ERROR_DESCRIPTION} onTryAgain={getProductDetails} />
+                <ErrorState description={translate('productDetailsError')} onTryAgain={getProductDetails} />
                 :
                 <ProductDetails details={details} isLoading={isLoading} />
             }

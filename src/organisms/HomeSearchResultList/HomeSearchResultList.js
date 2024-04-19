@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom'
 import CardProduct from '../../molecules/CardProduct'
 import Typography from '../../atoms/Typography'
+import useTranslation from '../../hooks/useTranslation'
 import { getProductDetailsUrl } from '../../utils/helpers'
 import './HomeSearchResultList.styles.css'
 
 const HomeSearchResultList = ({ product, productsList }) => {
     const navigate = useNavigate()
+    const { translate } = useTranslation()
 
     const handleViewProductDetails = ({ productId }) => {
         const url = getProductDetailsUrl(productId)
@@ -15,8 +17,7 @@ const HomeSearchResultList = ({ product, productsList }) => {
     return (
         <main className="list-products-container">
             <Typography component='h2' variant='subtitle-regular' className='subsection-title'>
-                Resultado da busca para:
-                <Typography component='span' variant='subtitle-medium'>{product}</Typography>
+                {translate('searchResultProduct', { product })}
             </Typography>
             {productsList.map((item, index) => (
                 <CardProduct

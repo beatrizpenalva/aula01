@@ -1,15 +1,20 @@
 import FeedbackWrapper from '../../templates/FeedbackWrapper'
 import Typography from '../../atoms/Typography'
+import useTranslation from '../../hooks/useTranslation'
 
-const HomeInitialState = () => (
-    <FeedbackWrapper>
-        <Typography component='h2' variant='subtitle-bold'>
-            Nada a ser exibido
-        </Typography>
-        <Typography>
-            Você ainda não procurou por nada, nos diga o que procura, por favor.
-        </Typography>
-    </FeedbackWrapper>
-)
+const HomeInitialState = () => {
+    const { translate } = useTranslation()
+
+    return (
+        <FeedbackWrapper>
+            <Typography component='h2' variant='subtitle-bold'>
+                {translate('nothingToShow')}
+            </Typography>
+            <Typography>
+                {translate('searchDidNotStartedDescription')}
+            </Typography>
+        </FeedbackWrapper>
+    )
+}
 
 export default HomeInitialState
