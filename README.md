@@ -6,7 +6,30 @@
   ⚡ To access click <a href="https://meli-busca-rapida.vercel.app/result">here</a>! ⚡  
 </p>
 
-## 💻 Development decisions
+<p align="center">
+ <a href="#-challenge">Challenge</a> •
+ <a href="#-development">Development</a> • 
+ <a href="#-folders-structures">Folders structures</a> • 
+ <a href="#-getting-started">Getting Started</a> • 
+ <a href="#-author">Author</a>
+</p>
+
+---
+
+## 🎯 Challenge
+The challenge was to create a home page with a search feature and a page to see the details of a previous selected product using [Meli Api](https://developers.mercadolivre.com.br/pt_br/guia-para-produtos). In each page it was necessary show title, price and pictures of a product. Technical requirements: test at least one file of each layer on application and do not use a component lib.
+
+<p align="center">
+  <img src="https://i.giphy.com/PkAG8cQIWuOHTZSHj5.webp" aria-hidden></img>
+</p>
+
+<p align="right">
+  <a href="#top"> Back to the top. </a>
+</p>
+
+---
+
+## 💻 Development
 ### ⚙️ Technologies
 I have chosen to use ReactJS, because it is the lib that I work with and have familiarity. If I need to use Vanilla JS, probably I had spend a lot of time developing.
 
@@ -23,6 +46,12 @@ This project is structured based on Atomic Design patterns, since it is useful f
 In Atomic Design, we separate components in atoms, molecules, organisms, pages and templates. The atoms part it is the part that is not divisible, molecules it is atoms grouped, organisms it is molecules grouped but with more complexity and logic and pages, well, that are pages. To know more about it you can [click here](https://atomicdesign.bradfrost.com/chapter-2/).
 
 To separate the API requests and render logic from the view layer, I have created custom hooks to attend the specifities of each page. This way, the code it is more readable and it is easier to test. 
+
+<p align="right">
+  <a href="#top"> Back to the top. </a>
+</p>
+
+---
 
 ## 📂 Folders structures
 
@@ -77,6 +106,12 @@ To separate the API requests and render logic from the view layer, I have create
 └──
 
 ```
+<p align="right">
+  <a href="#top"> Back to the top. </a>
+</p>
+
+---
+
 ## 🚀 Getting Started
 
 ### 🦸 Running the app
@@ -122,3 +157,22 @@ $ git commit -m "feature: My new feature"
 $ git push origin my-feature
 
 ```
+<p align="right">
+  <a href="#top"> Back to the top. </a>
+</p>
+
+---
+
+## ✍ Author
+
+<p align="center">
+  Developed with ❤️ by <a href="https://github.com/beatrizpenalva">Beatriz Penalva</a>, find me on <a href="https://www.linkedin.com/in/beatrizpenalva/">Linkedin</a>. 👋
+</p>
+
+<p align="center">
+  <img src="https://i.giphy.com/umYMU8G2ixG5mJBDo5.webp" aria-hidden></img>
+</p>
+
+<p align="right">
+  <a href="#top"> Back to the top. </a>
+</p>
