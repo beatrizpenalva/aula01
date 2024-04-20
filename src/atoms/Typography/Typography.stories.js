@@ -3,6 +3,7 @@ import Typography from './Typography'
 export default {
     title: 'Atoms/Typography',
     component: Typography,
+    excludeStories: ['Sample'],
     tags: ['autodocs'],
     parameters: {
         layout: 'centered',
@@ -105,5 +106,16 @@ export const AllVariants = () => (
                 Eu sou um exemplo
             </Typography>
         </div>
+
+        <div style={{ display: 'flex', gap: '12px', flexDirection: 'column' }}>
+            <Typography>
+                sr-only, para me testar use o leitor de tela
+            </Typography>
+            <Typography variant='sr-only'>
+                Eu sou um exemplo
+            </Typography>
+        </div>
     </div>
 )
+
+export const Sample = args => <Typography {...args}>Eu sou um exemplo</Typography>

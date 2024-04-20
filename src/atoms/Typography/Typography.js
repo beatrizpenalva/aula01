@@ -24,6 +24,7 @@ Typography.propTypes = {
         'paragraph-sm-regular-erased',
         'paragraph-sm-medium',
         'paragraph-lg-regular',
+        'sr-only',
         'subtitle-regular',
         'subtitle-medium',
         'subtitle-bold',

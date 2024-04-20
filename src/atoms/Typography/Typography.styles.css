@@ -49,3 +49,12 @@
     gap: 8px;
     text-align: left;
 }
+
+.sr-only {
+    position: absolute;
+    /* Zero values for pixel sizes removes that element from the flow of your document,
+    meaning screen readers will ignore it */
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
