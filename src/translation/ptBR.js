@@ -26,5 +26,5 @@ export default {
     searchProductInputLabel: 'O que você está buscando?',
     searchProductInputPlaceholder: 'Buscar produtos',
     searchResultError: 'Não conseguimos efetuar a busca. Por favor, tente novamente.',
-    searchResultProduct: 'Resultado da busca para: {{product}}',
+    searchResultProduct: 'Resultado da busca para: <b>{{product}}</b>',
 }

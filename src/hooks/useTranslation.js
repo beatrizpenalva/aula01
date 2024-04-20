@@ -3,8 +3,9 @@ import translation from '../translation/ptBR'
 const t = (key, values) => {
     const allValuesKey = Object.keys(values ?? [])
     const baseString = translation[key]
+    const hasHTMLComponent = baseString.includes('</b>' || '<br />' || '</strong>')
 
-    if (!allValuesKey.length) return baseString
+    if (!allValuesKey.length && !hasHTMLComponent) return baseString
 
     let text
 
@@ -12,7 +13,11 @@ const t = (key, values) => {
         text = baseString.replace(`{{${element}}}`, values[element])
     })
 
-    return text
+    if (!hasHTMLComponent) return text
+
+    return (
+        <span dangerouslySetInnerHTML={{ __html: text }} />
+    )
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
