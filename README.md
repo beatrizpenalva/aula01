@@ -95,6 +95,8 @@ To separate the API requests and render logic from the view layer, I have create
 |  |  |  └── service.test.js
 |  |  |  └── fixtures.js
 |  |  |  |  └── mockResponse.js
+|  |  └── translation
+|  |  |  |  └── ptBR.js
 |  |  └── utils
 |  |  |  |  └── helpers.js
 |  |  |  |  └── helpers.test.js
