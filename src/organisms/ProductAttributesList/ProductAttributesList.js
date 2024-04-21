@@ -21,7 +21,7 @@ const ProductAttributesList = ({ attributes, isLoading }) => {
             {isLoading ? <LoadingState />
                 : (
                     <>
-                        <Typography component='h6' className='subsection-title' variant='subtitle-medium '>
+                        <Typography component='h6' className='subsection-title' variant='subtitle-medium'>
                             {translate('productDatasheet')}
                         </Typography>
                         {attributes.map(({ id, name, value_name }, index) => {
