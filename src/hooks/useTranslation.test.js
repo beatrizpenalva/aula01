@@ -21,4 +21,11 @@ describe('useTranslation', () => {
 
         expect(() => result.current.translate('baby')).toThrow(Error('Translate key baby it is not created at file ptBR'))
     })
+
+    test('returns span component with word highlighting in bold', () => {
+        const { result } = renderHook(() => useTranslation())
+
+        const functionResult = result.current.translate('searchResultProduct', { product: 'dendê' })
+        expect(functionResult).toEqual(<span dangerouslySetInnerHTML={{ "__html": "Resultado da busca para: <b>dendê</b>" }} />)
+    })
 })
