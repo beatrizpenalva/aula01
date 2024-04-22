@@ -9,7 +9,7 @@ describe('CardProduct', () => {
 
         expect(screen.getAllByTestId('card-image').length).toBeGreaterThan(0)
         expect(screen.getByText('Frete grátis')).toBeInTheDocument()
-        expect(screen.getByText('Por VIKING')).toBeInTheDocument()
+        expect(screen.getByText('Por: VIKING')).toBeInTheDocument()
     })
 
     test('render picture empty state when does not receive pictures list from product prop', () => {
@@ -18,6 +18,6 @@ describe('CardProduct', () => {
 
         expect(screen.getAllByTestId('default-img-container').length).toBeGreaterThan(0)
         expect(screen.queryByText('Frete grátis')).not.toBeInTheDocument()
-        expect(screen.queryByText('Por VIKING')).not.toBeInTheDocument()
+        expect(screen.queryByText('Por: VIKING')).not.toBeInTheDocument()
     })
 })

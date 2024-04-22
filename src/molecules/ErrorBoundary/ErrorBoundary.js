@@ -17,7 +17,7 @@ const ErrorBoundary = () => {
                 {translate('errorBoundaryTitle')}
             </Typography>
             <Typography>
-                {translate('errorBoundaryDescriptio')}
+                {translate('errorBoundaryDescription')}
             </Typography>
             <Button onClick={() => navigate(HOME)}>{translate('buttonGoBackToBegin')}</Button>
         </FeedbackWrapper >
